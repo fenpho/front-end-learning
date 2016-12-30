@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>欢迎给我留言</h1>
+	<div>
+		<p>姓名：<input type="text" id="xingming" /></p> 
+		<p>QQ号码：<input type="text" id="qqhao" /></p>
+		<p>内容：
+			<textarea id="neirong" cols="30" rows="10"></textarea>
+		</p>
+		<p>
+			<input type="button" value="提交留言" id="submitbtn"/>
+		</p>
+	</div>
+	
+	<script type="text/javascript" src="js/myajax.js"></script>
+	<script type="text/javascript">
+		var xingmingTxt = document.getElementById("xingming");
+		var qqhaoTxt = document.getElementById("qqhao");
+		var neirongTxt = document.getElementById("neirong");
+		var submitbtn = document.getElementById("submitbtn");
+
+		//点击提交按钮做的事情
+		submitbtn.onclick = function(){
+			var xingming = xingmingTxt.value;
+			var qqhao = qqhaoTxt.value;
+			var neirong = neirongTxt.value;
+			// //正则表达式
+			// if(!/^[\u4e00-\u9fa5]{2,4}$/.test(xingming)){
+			// 	alert("姓名非法！");
+			// 	return;
+			// }
+			// if(!/^[\d]{5,12}$/.test(qqhao)){
+			// 	alert("qq号非常");
+			// 	return;
+			// }
+
+			//ajax提交表单
+			myajax.post("do/write.php",{
+				"xingming" : xingming,
+				"qqhao" : qqhao,
+				"neirong" : neirong
+			},function(err,data){
+				if(err){
+					alert("服务器错误，请稍后");
+					return;
+				}
+				var obj = eval("(" + data + ")");
+				if(obj.result == "ok"){
+					alert("恭喜留言添加成功");
+				}else{
+					alert("添加失败！");
+				}
+
+				//恢复按钮
+				submitbtn.disabled = "";
+				submitbtn.value = "提交表单";
+			});
+
+			//
+			submitbtn.value = "正在提交...请稍后...";
+			submitbtn.disabled = "disabled";
+		}
+	</script>
+</body>
+</html>
