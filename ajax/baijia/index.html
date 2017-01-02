@@ -148,7 +148,7 @@
 		//得到模板字符串
 		var templateString = $("#feed_template").html();
 		//能够根据模板字符串来创造一个数据绑定函数，这是underscore的语法
-		var compileFunction = _.template(templateString);
+		var compile = _.template(templateString);
 
 		//全局变量
 		var page = 0;
@@ -183,7 +183,7 @@
 					});
 					 
 					//数据绑定，此时用的字典是我们修正好的字典
-					var DomString = compileFunction(dictionary);
+					var DomString = compile(dictionary);
 					//转为jQuery对象，把jQuery对象添加到页面上
 					$article.append($(DomString));
 				});
