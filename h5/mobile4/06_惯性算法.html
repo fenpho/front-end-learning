@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 60px;
+			height: 60px;
+			background-color: orange;
+			position: absolute;
+			left: 100px;
+			top: 100px;
+		}
+		span{
+			width: 1px;
+			position: absolute;
+			height: 600px;
+			left: 800px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<span class="line"></span>
+
+	<script type="text/javascript">
+		var box = document.getElementsByTagName("div")[0];
+		//起点的位置
+		var deltaX;
+		//信号量
+		var nowX = 100;
+		//移动的数组
+		var movearr = [];
+		box.addEventListener("touchstart",function(event){
+			event.preventDefault();
+			//去掉过渡
+			box.style.transition = "none";
+			//记录误差
+			deltaX = event.touches[0].clientX - nowX;
+		},false);
+		//touchmove事件并不是说，你滑动了多少像素就触发几次。而是有一个固有的时间周期。
+		//你滑动的慢，clientX间距很小。你滑动的快，clientX间距很大。
+		box.addEventListener("touchmove",function(event){
+			event.preventDefault();
+			//信号量的改变
+			nowX = event.touches[0].clientX - deltaX;
+			//相对移动
+			box.style.left = nowX + "px";
+			//记录手指的位置点
+			movearr.push(event.touches[0].clientX);
+		},false);
+		//触摸结束
+		box.addEventListener("touchend",function(event){
+			event.preventDefault();
+			//计算movearr最后两个点的间距
+			var s = movearr[movearr.length - 1] - movearr[movearr.length - 2];
+			//s的大小就决定了你的速度，计算一个新的有惯性的targetx。
+			var targetX = nowX + s * 5;
+			if(targetX > 740){
+				targetX = 740;
+				//贝塞尔曲线有折返
+				box.style.transition = "all 0.4s cubic-bezier(0.15, 0.85, 0.15, 2.08) 0s";
+			}else if(targetX < 0){
+				targetX = 0;
+				box.style.transition = "all 0.4s cubic-bezier(0.15, 0.85, 0.15, 2.08) 0s";
+			}else{
+				box.style.transition = "all 0.4s cubic-bezier(0.18, 0.68, 0.65, 0.88) 0s";	
+			}
+			//用过渡来实现
+			box.style.left = targetX + "px";
+			//信号量的值就是目标x的值
+			nowX = targetX;
+		},false);
+	</script>
+</body>
+</html>
