@@ -18,6 +18,10 @@ html,body{
     padding: 0 .2rem;
     box-sizing: border-box;
 }
+.header a{
+	text-decoration: none;
+	color: #fff;
+}
 .close{
 	float: left;
 }
@@ -55,6 +59,9 @@ html,body{
 	height: .5rem;
 	background-color: #5fc0cd;
 	border: none;
+}
+.search .btn-login a{
+	text-decoration: none;
 	color: #fff;
 }
 .search .tel{
