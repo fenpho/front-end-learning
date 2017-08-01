@@ -1,0 +1,173 @@
+* {
+	margin: 0;
+	padding: 0;	
+}
+html {
+	font-size: 100px;
+}
+.Site {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: auto;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 320px;
+  max-width: 1920px;
+  margin: .45rem 0 .75rem 0;
+}
+.Site-content {
+  flex: 1;
+}
+header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	height: .45rem;
+	color: #fff;
+	background-color: #5fc0cd;
+}
+header h2 {
+	font-size: .16rem;
+}
+header .back {
+    position: absolute;
+    left: .10rem;
+    top: .08rem;
+    font-size: .2rem;
+}
+main .banner {
+	display: flex;
+	align-items: center;
+	height: 1.6rem;
+	width: 100%;
+	padding-left: .26rem;
+	background: url(images/bg.png) center top no-repeat;
+	background-size: cover;
+}
+main .banner .user-left {
+	position: relative;
+	float: left;
+	width: .85rem;
+	height: .85rem;
+}
+main .user-left img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+main .banner .user-right {
+	float: left;
+	margin-left: .3rem;
+	color: #fff;
+}
+main .user-right .user-name {
+	display: block;
+	height: .4rem;
+	font-size: .16rem;
+	line-height: .4rem;
+}
+main .user-right .location {
+    display: block;
+    padding-left: .22rem;
+    font-size: .14rem;
+    background: url(images/location.png) left center no-repeat;
+    background-size: .12rem .16rem;
+}
+.skill .skill-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: .5rem;
+	padding-left: .13rem;
+	border-bottom: 1px solid #ccc;
+}
+.skill .skill-title h3 {
+    height: .15rem;
+    padding-left: .07rem;
+    border-left: 3px solid #5fc0cd;
+	font-size: .16rem;
+    line-height: .15rem;
+    font-weight: normal;
+}
+.skill .list {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 .2rem;
+}
+.skill .list li {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: .5rem;
+    padding: .1rem 0;
+    border-bottom: 1px solid #ccc;
+    font-size: .14rem;
+    line-height: .24rem;
+    list-style: none;
+}
+.skill .list .item1,
+.skill .list .item2 {
+    padding-left: .27rem;
+    margin-right: .1rem;
+    background: url(images/star.png) .08rem center no-repeat;
+    background-size: .12rem;
+}
+.skill .list .item2 {
+	padding-left: .23rem;
+	border-left: 1px solid #ccc;
+}
+.skill .list .list-title {
+	height: .2rem;
+	padding-right: .1rem;
+	padding-left: .08rem;
+	border-right: 1px solid #ccc;
+	color: #999;
+	line-height: .2rem;
+}
+.skill .list .list-content {
+	flex: 1;
+	padding-left: .1rem;
+}
+footer {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	padding: 0 .2rem;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: .75rem;
+	box-sizing: border-box;
+	font-size: .16rem;
+	text-align: center;
+	background-color: #fff;
+}
+footer .message {
+	display: block;
+	flex: 1;
+	height: .44rem;
+	margin-right: .1rem;
+	border: 2px solid #5fc0cd;
+	color: #5fc0cd;
+	line-height: .44rem;
+	border-radius: 5px;
+}
+footer .tel {
+	display: block;
+	flex: 1;
+	height: .44rem;
+	border: 1px solid #5fc0cd;
+	color: #fff;
+	line-height: .44rem;
+	background-color: #5fc0cd;
+	border-radius: 5px;
+}
