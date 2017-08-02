@@ -28,6 +28,7 @@ header {
 	left: 0;
 	z-index: 999;
 	width: 100%;
+	min-width: 320px;
 	height: .45rem;
 	color: #fff;
 	background-color: #5fc0cd;
@@ -50,30 +51,30 @@ main .banner {
 	background: url(images/bg.png) center top no-repeat;
 	background-size: cover;
 }
-main .banner .user-left {
+main .banner .user-pic {
 	position: relative;
 	float: left;
 	width: .85rem;
 	height: .85rem;
 }
-main .user-left img {
+main .user-pic img {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 }
-main .banner .user-right {
+main .banner .user-info {
 	float: left;
 	margin-left: .3rem;
 	color: #fff;
 }
-main .user-right .user-name {
+main .user-info .user-name {
 	display: block;
 	height: .4rem;
 	font-size: .16rem;
 	line-height: .4rem;
 }
-main .user-right .location {
+main .user-info .location {
     display: block;
     padding-left: .22rem;
     font-size: .14rem;
@@ -145,6 +146,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	min-width: 320px;
 	height: .75rem;
 	box-sizing: border-box;
 	font-size: .16rem;
