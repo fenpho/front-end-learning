@@ -169,10 +169,22 @@ footer {
   height: .5rem;
   background-color: #f8fafb;
   border-top: 1px solid #e1e5e7;
+  box-sizing: border-box;
+}
+footer .btn{
+  background-color: #f8fafb;
+  padding: 0;
+  cursor: default;
 }
 footer .footer-home{
   position: relative;
   padding-top: .2rem;
+  display: inline-block;
+  color: #000;
+  top: .02rem;
+}
+footer .footer-home:hover, footer .footer-edit:hover, footer .footer-user:hover{
+  text-decoration: none;
 }
 footer .container-fluid{
   width: 100%;
@@ -192,6 +204,9 @@ footer .footer-home i{
 footer .footer-user{
   position: relative;
   padding-top: .2rem;
+  display: inline-block;
+  color: #000;
+  top: .02rem;
 }
 footer .footer-user i{
   position: absolute;
@@ -202,14 +217,16 @@ footer .footer-user i{
   height: .2rem;
   background: url(images/csssprite.png) no-repeat;
   background-size: 1.67rem .75rem;
-  background-position: 0rem -.32rem;
+  background-position: 0rem -.31rem;
 }
 footer .footer-edit{
   position: relative;
+  display: inline-block;
+  color: #000;
 }
 footer .footer-edit i{
   position: absolute;
-  top: 0;
+  top: -.15rem;
   left: 50%;
   margin-left: -.12rem;
   width: .4rem;
