@@ -4,12 +4,12 @@ html {
 .Site {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  overflow-y: auto;
   width: 100%;
   min-height: 100vh;
   min-width: 320px;
   max-width: 1920px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 .Site-content {
   flex: 1;
@@ -60,33 +60,34 @@ header {
   padding: .15rem .3rem;
 }
 .table-title{
-  border-bottom: 1px solid #e1e5e7; 
   position: fixed;
   z-index: 999;
   top: .45rem;
   left: 0;
   width: 100%;
   height: .4rem;
-  background-color: #fff;
   margin: 0;
   padding: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e1e5e7; 
 }
 .table-title .col-xs-4{
   padding: 0;
 }
 .table-title .dropdown{
-  width: 100%;
-  height: .4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: .4rem;
 }
 .table-title .dropdown .btn{
+  position: relative;
   width: 100%;
   height: .3rem;
-  border: none;
   padding: 0rem;
-  position: relative;
+  color: #999;
+  border: none;
   outline: none;
 }
 .table-title .dropdown .caret{
@@ -107,10 +108,14 @@ p{
 .table-content{
   border-bottom: 1px solid #e1e5e7;
 }
+.table-content .list-wrap{
+  text-decoration: none;
+}
 .table-content .date{
-  padding-left: .2rem;
   position: relative;
+  padding-left: .2rem;
   font-size: .14rem;
+  color: #999;
 }
 .table-content .date i{
   position: absolute;
@@ -122,9 +127,10 @@ p{
   background-size: 1.67rem .75rem;
 }
 .table-content .location{
-  padding-left: .2rem;
   position: relative;
+  padding-left: .2rem;
   font-size: .14rem;
+  color: #999;
 }
 .table-content .location i{
   position: absolute;
@@ -137,16 +143,31 @@ p{
   background-position: -1.16rem .01rem;
 }
 .table-content .table-list{
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+.text-wrap{
+  flex: 1;
   overflow: hidden;
 }
 .table-content .table-list p{
-  float: left;
+  color: #333;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/*鼠标移上去时显示全部文字*/
+.table-content .table-list:hover p{
+  text-overflow:inherit;
+  overflow:visible;
 }
 .table-content .table-list .time{
-  float: right;
-  margin: .1rem;
   position: relative;
+  width: .72rem;
+  margin: .1rem;
   padding-right: .1rem;
+  color: #e63b0e;
 }
 .table-content .time i{
   position: absolute;
@@ -172,16 +193,16 @@ footer {
   box-sizing: border-box;
 }
 footer .btn{
-  background-color: #f8fafb;
   padding: 0;
+  background-color: #f8fafb;
   cursor: default;
 }
 footer .footer-home{
-  position: relative;
-  padding-top: .2rem;
   display: inline-block;
-  color: #000;
+  position: relative;
   top: .02rem;
+  padding-top: .2rem;
+  color: #5fc0cd;
 }
 footer .footer-home:hover, footer .footer-edit:hover, footer .footer-user:hover{
   text-decoration: none;
@@ -194,27 +215,27 @@ footer .footer-home i{
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -.12rem;
   width: .24rem;
   height: .2rem;
+  margin-left: -.12rem;
   background: url(images/csssprite.png) no-repeat;
   background-size: 1.67rem .75rem;
   background-position: -.53rem .01rem;
 }
 footer .footer-user{
-  position: relative;
-  padding-top: .2rem;
   display: inline-block;
-  color: #000;
+  position: relative;
   top: .02rem;
+  padding-top: .2rem;
+  color: #999;
 }
 footer .footer-user i{
   position: absolute;
   top: 0;
   left: 50%;
-  margin-left: -.12rem;
   width: .24rem;
   height: .2rem;
+  margin-left: -.12rem;
   background: url(images/csssprite.png) no-repeat;
   background-size: 1.67rem .75rem;
   background-position: 0rem -.31rem;
@@ -228,11 +249,12 @@ footer .footer-edit i{
   position: absolute;
   top: -.15rem;
   left: 50%;
-  margin-left: -.12rem;
   width: .4rem;
   height: .4rem;
+  margin-left: -.12rem;
   background: url(images/csssprite.png) no-repeat;
   background-color: #5fc0cd;
   background-size: 1.67rem .75rem;
   background-position: -.28rem -.22rem;
   border-radius: 50%;
+}
