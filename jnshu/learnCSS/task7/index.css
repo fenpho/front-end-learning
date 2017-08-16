@@ -1,0 +1,169 @@
+html{
+	font-size: 95px;
+	background-color: #f0f0f0;
+}
+.row, p{
+    margin: 0;
+}
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	width: 100%;
+	min-width: 3.2rem;
+	height: .45rem;
+	background-color: #29bde0;
+}
+.btn:hover,.btn:focus{
+	background-color: #fff;
+}
+.menu{
+	position: absolute;
+    left: .15rem;
+    bottom: .15rem;
+	width: .2rem;
+	height: .15rem;
+	background: url(images/csssprite.png) no-repeat;
+	background-size: 2.5rem 1rem;
+	background-position: -1.82rem 0;
+	border: none;
+	outline: none;/*去除点击后的蓝色边框*/
+}
+main{
+	margin-top: .45rem;
+}
+main .container-fluid{
+	background-color: #f0f0f0;
+	padding: .15rem .38rem;
+	min-width: 320px;
+}
+main .row a{
+	text-decoration: none;
+	outline: none;
+}
+main .container-fluid .btn{
+	position: relative;
+	height: .57rem;
+	margin-bottom: .15rem;
+	line-height: .37rem;
+	color: #9a9a9a;
+	font-size: .16rem;
+	text-decoration: none;
+	outline: none;
+	border: 1px solid #c9c9c9;
+	border-radius: 0;
+}
+.container-fluid .btn i{
+	position: absolute;
+    right: .12rem;
+    bottom: .16rem;
+	width: .12rem;
+	height: .2rem;
+	background: url(images/csssprite.png) no-repeat;
+	background-size: 2.5rem 1rem;
+	background-position: -.12rem 0;
+}
+.ver .ver-title h2{
+	height: .45rem;
+	margin: 0;
+	line-height: .45rem;
+	font-size: .18rem;
+	text-align: center;
+	color: #fbb435;
+	background-color: #fff;
+	border-bottom: 2px solid #fbb435;
+}
+.ver{
+	width: 100%;
+}
+.ver .ver-content{
+	width: 100%;
+	background-color: #fff;
+	padding: .05rem .3rem;
+	position: relative;
+}
+.ver-content .row .btn{
+	margin: .15rem 0;
+	border: none;
+	color: #fff;
+	background-color: #69d1e9;
+}
+.ver-content .row .text{
+	line-height: .2rem;
+	font-size: .14rem;
+	text-align: center;
+	color: #787878;
+}
+.ver-content .next{
+    position: absolute;
+    top: 43%;
+    right: -.05rem;
+    margin-top: -.07rem;
+    width: .28rem;
+    height: .24rem;
+    background: url(images/csssprite.png) no-repeat;
+    background-size: 2.5rem 1rem;
+    background-position: -2.23rem -.02rem;
+}
+.ver-content .circle{
+	position: relative;
+	height: .2rem;
+	width: 100%;
+}
+.ver-content .circle ul{
+	position: absolute;
+	top: .08rem;
+	left: 50%;
+	margin-left: -.32rem;
+	padding-left: 0;
+	height: .2rem;
+	overflow: hidden;
+}
+.ver-content .circle ul li{
+	float: left;
+	width: .1rem;
+	height: .1rem;
+	margin-right: .08rem;
+	list-style: none;
+	background-color: #f0f0f0;
+	border-radius: 50%;
+}
+.ver-content .circle ul li.cur{
+	background-color: #69d1e9;
+}
+/* 媒体查询实现自适应 */
+/*1280分辨率以上（大于1200px）*/
+
+@media screen and (min-width:1200px){
+	html{
+		font-size: 130px;
+	}
+}
+ 
+
+/*1100分辨率（大于960px，小于1199px）*/
+
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+    html{
+		font-size: 110px;
+	}
+}
+ 
+
+/*880分辨率（大于768px，小于959px）*/
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+     html{
+		font-size: 105px;
+	}
+}
+ 
+
+/*720分辨率（大于480px，小于767px）*/
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     html{
+		font-size: 100px;
+	}
+}

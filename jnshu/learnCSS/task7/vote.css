@@ -1,0 +1,326 @@
+html{
+	font-size: 100px;
+	background-color: #29bde0;
+}
+.row, p{
+    margin: 0;
+}
+.container-fluid{
+	padding: 0;
+	min-width: 3.2rem;
+	background-color: #29bde0;
+}
+header{
+	position: fixed;
+	height: .45rem;
+	width: 100%;
+	min-width: 3.2rem;
+	line-height: .45rem;
+	text-align: center;
+	color: #fff;
+	background-color: #29bde0;
+	overflow: hidden;
+	z-index: 999;
+}
+header .vote{
+	height: .45rem;
+	line-height: .45rem;
+	margin: 0;
+	font-size: .18rem;
+}
+header .menu{
+	position: absolute;
+	left: .1rem;
+	top: .15rem;
+	width: .22rem;
+	height: .20rem;
+	background: url(images/csssprite.png) no-repeat;
+	background-size: 2.5rem 1rem;
+	background-position: -.67rem 0;
+	border: none;
+	outline: none;/*去除点击后的蓝色边框*/
+}
+header .close{
+	position: absolute;
+	right: .1rem;
+	top: .15rem;
+	width: .18rem;
+	height: .18rem;
+	background: url(images/csssprite.png) no-repeat;
+	background-size: 2.5rem 1rem;
+	background-position: -.35rem 0;
+	border: none;
+	outline: none;/*去除点击后的蓝色边框*/
+	opacity: 1;
+}
+main{
+	padding-top: .45rem;
+	padding-bottom: 1rem;
+	background-color: #29bde0;
+}
+main .tip{
+	position: relative;
+	overflow: hidden;
+}
+main .tip .music{
+    position: absolute;
+    top: .07rem;
+    right: .11rem;
+    width: .28rem;
+    height: .28rem;
+    background: url(images/csssprite.png) no-repeat;
+    background-size: 2.5rem 1rem;
+    background-position: -.85rem -.42rem;
+}
+.tip .music audio{
+	position: absolute;
+    top: 0;
+    left: -.02rem;
+    display: inline-block;
+    vertical-align: baseline;
+    opacity: 0;
+}
+main .tip .text{
+	position: relative;
+	height: .42rem;
+	line-height: .42rem;
+	font-size: .16rem;
+	text-indent: 2em;
+	color: #464646;
+	background-color: #b9e9f5;
+}
+main .tip .text i{
+    position: absolute;
+    bottom: -.1rem;
+    left: .45rem;
+    border-top: .1rem solid #b9e9f5;
+    border-left: .05rem solid transparent;
+    border-right: .05rem solid transparent;
+}
+main .tip .text2{
+	display: block;
+	height: .4rem;
+	line-height: .4rem;
+	text-indent: 3em;
+	color: #fff;
+	font-size: .14rem;
+	background-color: #29bde0;
+}
+.role-list{
+	display: flex;
+	justify-content: space-around;
+}
+.row .role{
+	position: relative;
+	float: left;
+	width: .7rem;
+	height: .7rem;
+	margin: .18rem;
+	text-align: center;
+	border: 5px solid #fff;
+}
+.row .role:hover .opration{
+	display: block;
+}
+.row .role .role-name{
+	display: block;
+	height: .4rem;
+	line-height: .4rem;
+	background-color: #f5c97b;
+}
+.row .role .role-num{
+	display: block;
+	height: .2rem;
+	line-height: .2rem;
+	color: #fff;
+	background-color: #83b09a;
+}
+.row .opration{
+	position: absolute;
+	bottom: -.41rem;
+	left: -.04rem;
+	display: none;
+	width: .7rem;
+}
+.row .opration ul{
+	padding: 0;
+	overflow: hidden;
+}
+.row .opration ul li{
+	float: left;
+	width: .15rem;
+	height: .15rem;
+	list-style: none;
+	background: url(images/csssprite.png) no-repeat;
+	background-size: 2.5rem 1rem;
+	background-position: -.12rem -.4rem;
+	background-color: #fff;
+	margin-right: .03rem;
+}
+.row .opration ul li:nth-child(2){
+	background-position: -.33rem -.42rem;
+}
+.row .opration ul li:nth-child(3){
+	background-position: -.52rem -.42rem;
+}
+.row .opration ul li:nth-child(4){
+	background-position: -.67rem -.40rem;
+	margin-right: 0;
+}
+footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	height: .85rem;
+	width: 100%;
+	min-width: 3.2rem;
+	padding: .25rem .4rem 0 .4rem;
+	background-color: #29bde0;
+}
+footer .voted{
+	width: 100%;
+	height: .45rem;
+	color: #fff;
+	font-size: .18rem;
+	border: none;
+	outline: none;/*去除点击后的蓝色边框*/
+	background-color: #fbb435;
+}
+footer .voted a{
+	color: #fff;
+	text-decoration: none;
+}
+/* 媒体查询实现自适应 */
+/*959分辨率以上（大于959px）*/
+
+@media screen and (min-width:959px){
+	html{
+		font-size: 130px;
+	}
+	.row .role{
+		width: 2rem;
+		height: 2rem;
+		margin: .5rem;
+	}
+	.row .role .role-name{
+		height: 1.5rem;
+		line-height: 1.5rem;
+	}
+	.row .role .role-num{
+		height: .42rem;
+		line-height: .42rem;
+	}
+	.row .opration{
+    	bottom: -.8rem;
+    	left: -.03rem;
+    	width: 2rem;
+	}
+	.row .opration ul li{
+		width: .4rem;
+		height: .4rem;
+		background-size:  5rem 2rem;
+		background-position: -.2rem -.75rem;
+		margin-right: .13rem;
+	}
+	.row .opration ul li:nth-child(2){
+		background-position: -.6rem -.8rem;
+	}
+	.row .opration ul li:nth-child(3){
+		background-position: -.99rem -.79rem;
+	}
+	.row .opration ul li:nth-child(4){
+		background-position: -1.29rem -.75rem;
+		margin-right: 0;
+	}
+}
+ 
+
+/*880分辨率（大于768px，小于959px）*/
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+     html{
+		font-size: 105px;
+	}
+	.row .role{
+		width: 1.5rem;
+		height: 1.5rem;
+		margin: .4rem;
+	}
+	.row .role .role-name{
+		height: 1rem;
+		line-height: 1rem;
+	}
+	.row .role .role-num{
+		height: .41rem;
+		line-height: .41rem;
+	}
+	.row .opration{
+    	bottom: -.7rem;
+    	left: -.04rem;
+    	width: 1.5rem;
+	}
+	.row .opration ul li{
+    	width: .3rem;
+    	height: .3rem;
+    	background-size: 4rem 1.6rem;
+    	background-position: -.16rem -.6rem;
+    	margin-right: .1rem;
+	}
+	.row .opration ul li:nth-child(2){
+		background-position: -.48rem -.64rem;
+	}
+	.row .opration ul li:nth-child(3){
+		background-position: -.792rem -.632rem;
+	}
+	.row .opration ul li:nth-child(4){
+		background-position: -1.03rem -.6rem;
+		margin-right: 0;
+	}
+}
+ 
+
+/*720分辨率（大于480px，小于767px）*/
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     html{
+		font-size: 100px;
+	}
+	.row .role{
+		width: 1.3rem;
+		height: 1.3rem;
+		margin: .35rem;
+	}
+	.row .role .role-name{
+		height: .9rem;
+		line-height: .9rem;
+	}
+	.row .role .role-num{
+		height: .3rem;
+		line-height: .3rem;
+	}
+	.row .opration{
+    	bottom: -.6rem;
+    	left: -.04rem;
+    	width: 1.3rem;
+    	display: block;
+	}
+	.row .opration ul li{
+    	width: .24rem;
+    	height: .24rem;
+    	background-size: 3.2rem 1.28rem;
+    	background-position: -.128rem -.48rem;
+    	margin-right: .1rem;
+	}
+	.row .opration ul li:nth-child(2){
+		background-position: -.384rem -.512rem;
+	}
+	.row .opration ul li:nth-child(3){
+		background-position: -.634rem -.506rem;
+	}
+	.row .opration ul li:nth-child(4){
+		background-position: -.83rem -.48rem;
+		margin-right: 0;
+	}
+}
