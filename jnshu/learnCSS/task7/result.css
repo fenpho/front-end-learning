@@ -210,7 +210,7 @@ footer .btn a{
 
 @media screen and (min-width:1200px){
 	html{
-		font-size: 200px;
+		font-size: 140px;
 	}
 	main .result-data{
 		font-size: .16rem;
@@ -222,7 +222,7 @@ footer .btn a{
 
 @media screen and (min-width: 960px) and (max-width: 1199px) {
     html{
-		font-size: 150px;
+		font-size: 130px;
 	}
 		main .result-data{
 		font-size: .16rem;
