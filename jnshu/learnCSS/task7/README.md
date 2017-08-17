@@ -2,6 +2,13 @@
 
 收获什么： 1.HTML5的audio定义音频流； 2.处理半透明； 3.CSS3动画
 
+## 展示页面
+
+[版本选择页面](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/index.html)
+[投票](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/vote.html)
+[游戏结果](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/result.html)
+[源码](https://github.com/fenpho/front-end-learning/tree/master/jnshu/learnCSS/task7)
+
 ## 具体步骤
 
 1. （环境搭建）下载任务资源（0.5小时）

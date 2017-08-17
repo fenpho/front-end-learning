@@ -5,6 +5,14 @@ html{
 .row, p{
     margin: 0;
 }
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;          
+}
 header{
 	position: fixed;
 	top: 0;
@@ -129,7 +137,7 @@ main .container-fluid .btn{
 	background-color: #f0f0f0;
 	border-radius: 50%;
 }
-.ver-content .circle ul li.cur{
+.ver-content .circle ul li.cur, .ver-content .circle ul li:hover{
 	background-color: #69d1e9;
 }
 /* 媒体查询实现自适应 */

@@ -8,6 +8,14 @@ html{
     margin: 0;
     padding: 0 .3rem;
 }
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none;          
+}
 .container-fluid{
 	padding: 0;
 	min-width: 3.2rem;
