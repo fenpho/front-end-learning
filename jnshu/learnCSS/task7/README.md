@@ -4,9 +4,9 @@
 
 ## 展示页面
 
-[版本选择页面](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/index.html)
-[投票](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/vote.html)
-[游戏结果](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/result.html)
+[版本选择页面](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/index.html) <br />
+[投票](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/vote.html) <br />
+[游戏结果](https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task7/result.html) <br />
 [源码](https://github.com/fenpho/front-end-learning/tree/master/jnshu/learnCSS/task7)
 
 ## 具体步骤
