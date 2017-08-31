@@ -1,0 +1,528 @@
+.container-fluid {
+	max-width: 1200px;
+}
+html, body {
+	font: 14px "Microsoft Yahei", sans-serif;
+}
+header {
+	height: 40px;
+	width: 100%;
+}
+header .container-fluid {
+	height: 40px;
+	line-height: 40px;
+}
+header .container-fluid .hotline {
+	float: left;
+	color: #29b078;
+}
+header .container-fluid .share {
+	float: right;
+	position: relative;
+}
+header .share i {
+	position: absolute;
+	right: 5px;
+	top: 8px;
+	width: 25px;
+	height: 25px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: 0px 0px;
+}
+header .share i.share2{
+	right: 45px;
+	background-position: -51px 0px;
+} 
+header .share i.share3{
+	right: 85px;
+	background-position: -102px 0px;
+} 
+nav{
+	height: 99px;
+	width: 100%;
+	background-color: #29b078;
+}
+.navbar {
+	margin-bottom: 0;
+	background-color: #29b078;
+	border: none;
+}
+.navbar .navbar-nav>li>a{
+	display: block;
+	box-sizing: border-box;
+	width: 100px;
+	height: 100px;
+	line-height: 80px;
+	font-size: 16px;
+	text-align: center;
+	color: #fff;
+}
+.navbar .navbar-nav>li:hover>a, .navbar .navbar-nav>li.cur>a{
+	border-bottom: 4px solid #fff;
+	color: #fff;
+}
+.navbar .navbar-collapse{
+	margin-right: -46px;
+}
+.carousel {
+    top: -1px;
+}
+.carousel .carousel-caption p:first-child {
+	font-size: 40px;
+}
+.carousel .carousel-caption p:last-child {
+	font-size: 60px;
+}
+.carousel .carousel-caption p span {
+	font-size: 100px;
+}
+main{
+	background-color: #f1f1f1;
+}
+main .feature{
+	margin-top: 160px;
+	margin-left: 15px;
+}
+main .feature .pic{
+	position: relative;
+	width: 100%;
+	height: 150px;
+	padding-top: 76px;
+	font-size: 18px;
+	line-height: 74px;
+	text-align: center;
+	color: #333;
+}
+main .feature .pic i{
+	position: absolute;
+	left: 50%;
+	top: 5px;
+	width: 46px;
+	height: 66px;
+	margin-left: -23px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: -357px 0px;
+}
+main .feature .text{
+	font-size: 16px;
+	line-height: 26px;
+	color: #999;
+}
+main .feature .standard{
+	text-align: center;
+}
+main .feature .standard i{
+	top: 14px;
+	width: 60px;
+	height: 48px;
+	margin-left: -30px;
+	background-position: -427px 0px;
+}
+main .feature .connection i{
+	top: 9px;
+	width: 56px;
+	height: 58px;
+	margin-left: -28px;
+	background-position: -277px 0px;
+}
+main .feature .data{
+	padding: 15px 0 40px 45px;
+	border-left: 1px dashed #dedede;
+}
+main .feature .data .row{
+	padding-top: 15px;
+}
+main .feature .data .num{
+	position: relative;
+	display: block;
+	padding-left: 25px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 18px;
+	color: #26a26f;
+}
+main .feature .data .num i{
+	position: absolute;
+	top: 17px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: -150px 0px;
+}
+main .feature .data .info{
+	font-size: 18px;
+	color: #999;
+}
+main .learn{
+	margin-top: 40px;
+	margin-left: 30px;
+}
+main .learn h3{
+	height: 120px;
+	line-height: 120px;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+main .learn .row{
+	display: flex;
+	position: relative;
+	margin-bottom: 90px;
+}
+main .learn .order{
+	float: left;
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	font-size: 18px;
+	color: #29b078;
+	border: 1px solid #e4e4e4;
+	box-shadow: 0 0 10px #e4e4e4;
+	border-radius: 50%;
+	background-color: #fff;
+}
+main .learn .operation{
+	float: left;
+	flex: 1;
+	height: 70px;
+	padding: 10px 60px 10px 20px;
+	line-height: 25px;
+	color: #999;
+}
+main .learn .next{
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	margin-top: -8px;
+	width: 16px;
+	height: 16px;
+	background: url(images/csssprite.png) no-repeat center center;
+	background-position: -235px 0px;
+}
+main .show{
+	position: relative;
+}
+main .show h3{
+	height: 120px;
+	line-height: 120px;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+main .show .stwrap{
+	background-color: #fff;
+	border: 1px solid #e4e4e4;
+	box-shadow: 0 0 10px #e4e4e4;
+	border-radius: 5px;
+}
+main .show .avatar{
+	position: relative;
+	width: 100%;
+	height: 210px;
+	padding-top: 138px;
+	font-size: 18px;
+	line-height: 72px;
+	text-align: center;
+	color: #333;
+}
+main .show .info{
+	display: block;
+	font-size: 16px;
+	line-height: 26px;
+	color: #999;
+	padding: 0 30px 20px 30px;
+}
+main .show .avatar i{
+	position: absolute;
+	left: 50%;
+	top: 15px;
+	width: 108px;
+	height: 108px;
+	margin-left: -54px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: 0px -99px;
+}
+main .show .student2 i{
+	background-position: -143px -99px;
+}
+main .show .student3 i{
+	background-position: -286px -99px;
+}
+main .show .student4 i{
+	background-position: -429px -99px;
+}
+main .show .carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+main .show .carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #29b078;
+}
+main .cooperation{
+	margin: 60px 0 90px;
+}
+main .cooperation h3{
+	height: 120px;
+	line-height: 120px;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+main .cooperation .cowrap{
+	width: 1005;
+	height: 125px;
+	background-color: #fff;
+	border: 1px solid #e4e4e4;
+	box-shadow: 0 0 10px #e4e4e4;
+}
+main .cooperation div{
+	background-color: #fff;
+}
+main .cooperation div.cur{
+	position: relative;
+    top: -1px;
+	border: 1px solid #e4e4e4;
+	box-shadow: 0 0 10px #e4e4e4;
+}
+main .cooperation .ali{
+	height: 125px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: 0px -272px;
+}
+main .cooperation .king{
+	height: 125px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: -243px -272px;
+}
+main .cooperation .huan{
+	height: 125px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: -486px -272px;
+}
+main .cooperation .rong{
+	height: 125px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: -729px -272px;
+}
+main .cooperation .qiniu{
+	height: 125px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: -972px -272px;
+}
+.link{
+	background-color: #fff;
+	padding-bottom: 20px;
+	padding-left: 30px;
+}
+.link h3{
+	height: 60px;
+	line-height: 60px;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+.link .col-md-10ths .row {
+	position: relative;
+	float: left;
+	line-height: 30px;
+	margin: 0 -15px;
+	padding-left: 20px;
+	border-bottom: 1px solid transparent;
+}
+.link .col-md-10ths .row a{
+	color: #999;
+	text-decoration: none;
+}
+.link .col-md-10ths .row.cur, .link .col-md-10ths .row:hover{
+	border-bottom: 1px solid #26a26f;
+}
+.link .col-md-10ths .row i{
+	position: absolute;
+	top: 12px;
+	left: 0px;
+	width: 5px;
+	height: 5px;
+	background-color: #999;
+	border-radius: 50%;
+}
+footer{
+	height: 200px;
+	background-color: #26a26f;
+	border-top: 1px solid #32c086;
+}
+footer .us .change{
+	padding-left: 15px;
+	color: #fff;
+	font-size: 16px;
+	height: 80px;
+	line-height: 80px;
+}
+footer .us .about{
+	height: 80px;
+	line-height: 80px;
+}
+footer .us .about ul {
+	overflow: hidden;
+	margin-bottom: 0;
+	padding-left: 5px;
+}
+footer .us .about ul li{
+	float: left;
+	height: 70px;
+	line-height: 70px;
+	list-style: none;
+}
+footer .us .about ul li a{
+	color: #fff;
+	text-decoration: none;
+	padding: 0 10px;
+	border-right: 1px solid #fff;
+}
+footer .us .about ul li:last-child a{
+	border-right: none;
+}
+footer .web .undersite{
+    height: 65px;
+    line-height: 40px;
+    padding-top: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+footer .web .sitelist ul{
+	overflow: hidden;
+	padding-left: 0;
+}
+footer .web .sitelist ul li{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+}
+footer .web .sitelist ul li a{
+	display: inline-block;
+	height: 40px;
+	margin-right: 35px;
+	color: #fff;
+	text-decoration: none;
+}
+footer .web .sitelist ul li.cur a, footer .web .sitelist ul li:hover a{
+	border-bottom: 1px solid #fff;
+}
+footer .qrcode{
+	position: relative;
+	height: 170px;
+}
+footer .qrcode .fllow{
+	position: absolute;
+	top: 50%;
+	margin-top: -60px;
+	width: 120px;
+	height: 120px;
+	right: 20px;
+}
+footer .qrcode span{
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #fff;
+}
+footer .qrcode i{
+	display: block;
+	width: 90px;
+	height: 90px;
+	background: url(images/csssprite.png) no-repeat;
+	background-position: -1043px 0px;
+}
+footer .copyright{
+	height: 30px;
+    margin: 0;
+	line-height: 30px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	border-top: 1px solid #32c086;
+}
+
+.col-xs-5ths, .col-sm-5ths, .col-md-5ths, .col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+@media ( min-width : 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+ 
+@media ( min-width : 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+ 
+@media ( min-width : 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+.col-xs-10ths, .col-sm-10ths, .col-md-10ths, .col-lg-10ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+ 
+@media ( min-width : 768px) {
+    .col-sm-10ths {
+        width: 10%;
+        float: left;
+    }
+}
+ 
+@media ( min-width : 992px) {
+    .col-md-10ths {
+        width: 10%;
+        float: left;
+    }
+}
+ 
+@media ( min-width : 1200px) {
+    .col-lg-10ths {
+        width: 10%;
+        float: left;
+    }
+}
+
+
+/*媒体查询*/ 
+@media screen and (min-width: 768px){
+	.carousel-caption {
+	    right: 10%;
+	    left: 10%;
+	    padding-bottom: 30px;
+	}
+}
+@media screen and (min-width: 768px){
+	main .show .carousel-indicators {
+	    bottom: -50px;
+	}
+}
