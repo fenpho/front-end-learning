@@ -161,6 +161,7 @@ main .learn{
 main .learn h3{
 	height: 120px;
 	line-height: 120px;
+	margin-left: -30px;
 	font-size: 18px;
 	font-weight: bold;
 	text-align: center;
@@ -331,6 +332,7 @@ main .cooperation .qiniu{
 .link h3{
 	height: 60px;
 	line-height: 60px;
+	margin-left: -15px;
 	color: #333;
 	font-size: 18px;
 	font-weight: bold;
