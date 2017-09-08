@@ -1,44 +1,64 @@
-.container-fluid {
-	max-width: 1200px;
-}
 html, body {
-	font: 14px "Microsoft Yahei", sans-serif;
+	font: 100px "Microsoft Yahei", sans-serif;
+}
+.container-fluid {
+	min-width: 3.2rem;
+	overflow: hidden;
+	font-size: .14rem;
 }
 header {
-	height: 40px;
+	height: .32rem;
 	width: 100%;
 }
 header .container-fluid {
-	height: 40px;
-	line-height: 40px;
+	height: .32rem;
+	line-height: .32rem;
 }
 header .container-fluid .hotline {
+	display: none;
 	float: left;
 	color: #29b078;
+	font-size: .14rem;
 }
 header .container-fluid .share {
+	display: none;
 	float: right;
 	position: relative;
 }
 header .share i {
 	position: absolute;
-	right: 5px;
-	top: 8px;
-	width: 25px;
-	height: 25px;
+	right: .05rem;
+	top: .08rem;
+	width: .25rem;
+	height: .25rem;
 	background: url(images/csssprite.png) no-repeat;
-	background-position: 0px 0px;
+	background-size: 12rem 4rem;
+	background-position: 0rem 0rem;
 }
 header .share i.share2{
-	right: 45px;
-	background-position: -51px 0px;
+	right: .45rem;
+	background-position: -.51rem 0rem;
 } 
 header .share i.share3{
-	right: 85px;
-	background-position: -102px 0px;
+	right: .85rem;.
+	background-position: -1.02rem 0rem;
 } 
+header .log{
+	float: right;
+	margin-right: .15rem;
+}
+header .log a{
+	color: #333;
+	font-size: .12rem;
+	text-align: center;
+	text-decoration: none;
+}
+header .log a:first-child{
+	padding-right: .05rem;
+	border-right: 1px solid #29b078;
+}
 nav{
-	height: 99px;
+	height: .6rem;
 	width: 100%;
 	background-color: #29b078;
 }
@@ -46,36 +66,70 @@ nav{
 	margin-bottom: 0;
 	background-color: #29b078;
 	border: none;
+	border-radius: 0;
+}
+.navbar-toggle{
+	border: none;
+	margin-top: .15rem;
+}
+.navbar-toggle .icon-bar{
+	width: .18rem;
+}
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: #333;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+	background-color: #29b078;
+}
+.navbar .navbar-collapse {
+    margin-right: -.25rem;
+    position: absolute;
+    top: .59rem;
+    right: 0;
+    z-index: 9999;
+    background-color: #29b078;
+    border: none;
 }
 .navbar .navbar-brand{
-    width: 108px;
-    height: 50px;
-    margin-top: 26px;
+    width: 1.08rem;
+    height: .5rem;
+	margin-left: .15rem;
+    margin-top: .19rem;
     text-indent: -999em;
     background: url(images/csssprite.png) no-repeat;
-    background-position: -1045px -130px;
+    background-size: 6rem 2rem;
+    background-position: -5.23rem -.65rem;
 }
 .navbar .navbar-nav>li>a{
 	display: block;
-	box-sizing: border-box;
-	width: 100px;
-	height: 100px;
-	line-height: 80px;
-	font-size: 16px;
+	padding: 0;
+	width: .7rem;
+	height: .35rem;
+	line-height: .35rem;
+	font-size: .16rem;
 	text-align: center;
 	color: #fff;
-	overflow: hidden;
+	box-sizing: border-box;
+	border-bottom: .01rem solid #fff;
 }
-.navbar .navbar-nav>li:hover>a, .navbar .navbar-nav>li.cur>a{
-	border-bottom: 4px solid #fff;
-	color: #fff;
+.navbar-nav{
+	margin: 0;
+}
+.navbar-toggle .icon-bar{
+	width: .12rem;
 }
 .navbar .navbar-collapse{
-	margin-right: -46px;
+	margin-right: -.17rem;
+	padding-left: 0;
+}
+.navbar-default .navbar-toggle{
+	background-color: #fff;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+	background-color: #fff;
 }
 main{
 	background-color: #f1f1f1;
-	padding-bottom: 200px;
 }
 main .breadcrumb{
 	background-color: #f1f1f1;
@@ -85,69 +139,76 @@ main .breadcrumb{
 }
 .glyphicon-menu-right:before {
     content: "\e258";
-    font-size: 12px;
+    font-size: .12rem;
 }
 main .breadcrumb a{
 	display: block;
-	height: 80px;
-	line-height: 80px;
-	font-size: 16px;
+	height: .6rem;
+	line-height: .6rem;
+	font-size: .16rem;
 	color: #333;
 	text-decoration: none;
 }
 main .breadcrumb .active{
- 	font-size: 16px;
+ 	font-size: .16rem;
  	color: #29b078;
 }
 main .dir{
-	height: 60px;
-	margin-bottom: 40px;
-	line-height: 60px;
+	margin-bottom: .4rem;
+	line-height: .6rem;
 	border-bottom: 1px solid #e3e3e3;
+	overflow: hidden;
 }
 main .dir span{
-	margin-right: 20px;
-	font-size: 14px;
+	float: left;
+	width: 100%;
+	margin-right: .2rem;
+	text-align: center;
+	font-size: .14rem;
 	color: #999;
 }
 main .dir a{
-	margin-right: 35px;
-	font-size: 14px;
+	float: left;
+	width: 50%;
+	text-align: center;
+	line-height: .35rem;
+	font-size: .14rem;
 	color: #333;
 	background-color: #f1f1f1;
 	border-radius: 0;
 	font-weight: normal;
 }
 main .dir a.cur, main .dir a:hover{
-	font-size: 14px;
+	font-size: .14rem;
 	color: #fff;
 	background-color: #29b078;
 }
 main .title{
-	margin: 0 10px 45px 10px;
-    height: 40px;
-    line-height: 5px;
-    font-size: 16px;
+	margin: .3rem .1rem .25rem .1rem;
+    height: .4rem;
+    line-height: .2rem;
+    text-align: center;
+    font-size: .16rem;
     color: #333;
     font-weight: bold;
     border-bottom: 1px solid #d0d6d9;
 }
 main .col-md-4{
-	padding: 0 25px;
+	padding: 0 .25rem;
 }
 main .job-detail {
 	position: relative;
 	padding: 0;
-	margin-bottom: 40px;
+	margin-bottom: .4rem;
 	background-color: #fff;
 	border-radius: 5px;
-	box-shadow: 0 0 10px #ddd;
+	box-shadow: 0 0 .1rem #ddd;
 }
 main .mask{
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	padding: 50px 45px 0;
+	padding: .50rem .45rem 0;
 	background-color: rgba(0, 0, 0, .7);
 	z-index: 999;
 	display: none;
@@ -157,55 +218,55 @@ main .job-detail.cur .mask, main .job-detail:hover .mask{
 	display: block;
 }
 main .mask-text{
-	font-size: 16px;
+	font-size: .16rem;
 	color: #fff;
 }
 main .mask-text h4{
-	height: 90px;
+	height: .9rem;
 	margin: 0;
-	line-height: 90px;
+	line-height: .9rem;
 	text-align: center;
 }
 main .mask-text p{
 	margin: 0;
-	line-height: 25px;
+	line-height: .25rem;
 	text-indent: 2em;
 }
 main .info{
     margin: 0;
-    height: 180px;
-    padding-top: 20px;
+    height: 1.45rem;
+    padding-top: .2rem;
 }
 main .info .avatar{
 	position: absolute;
-	top: 20px;
-	left: 10px;
-	width: 140px;
-	height: 140px;
+	top: .4rem;
+	left: .1rem;
+	width: .7rem;
+	height: .7rem;
 	background: url(images/csssprite.png) no-repeat;
-    background-position: -637px 0px;
+	background-size: 6rem 2rem;
+    background-position: -3.18rem 0;
 }
 main .info .intro{
 	position: relative;
-	padding-left: 165px;
-	padding-right: 10px;
+	padding-left: .95rem;
+	padding-right: .1rem;
 }
 main .info .intro h4{
-	height: 30px;
-    line-height: 35px;
-	font-size: 16px;
+	height: .1rem;
+	font-size: .16rem;
 	color: #333;
 	font-weight: bold;
 }
 main .info .intro span{
-	line-height: 20px;
-	font-size: 14px;
+	line-height: .2rem;
+	font-size: .14rem;
 	color: #333;
 }
 main .thead{
 	float: left;
-	margin-right: 10px;
-	font-size: 12px;
+	margin-right: .1rem;
+	font-size: .12rem;
 	color: #999;
 }
 main .enter{
@@ -215,10 +276,10 @@ main .enter{
 main .enter>div{
 	float: left;
 	width: 50%;
-	padding-left: 10px;
+	padding-left: .1rem;
 	border: 1px solid #ddd;
-	height: 40px;
-	line-height: 40px;
+	height: .4rem;
+	line-height: .4rem;
 	box-sizing: border-box;
 }
 main .enter>div:first-child{
@@ -230,11 +291,11 @@ main .enter>div:last-child{
 }
 main .enter .star{
 	float: left;
-	width: 17px;
-	height: 17px;
-	margin: 11px 0 11px 5px;
+	width: .17rem;
+	height: .17rem;
+	margin: .11rem 0 .11rem .05rem;
 	background: url(images/csssprite.png) no-repeat;
-    background-position: -193px 0px;
+    background-position: -1.93rem 0;
 }
 main .grown{
 	margin: 0;
@@ -243,11 +304,11 @@ main .grown{
 main .grown>div{
 	float: left;
 	width: 50%;
-	padding-left: 10px;
+	padding-left: .1rem;
 	border: 1px solid #ddd;
-	height: 40px;
-	line-height: 40px;
-	font-size: 12px;
+	height: .4rem;
+	line-height: .4rem;
+	font-size: .12rem;
 	color: #333;
 	box-sizing: border-box;
 }
@@ -265,30 +326,30 @@ main .spec{
 }
 main .salary{
 	display: flex;
-	margin: 0 -10px;
+	margin: 0 -.1rem;
 	overflow: hidden;
 }
 main .salary>div:first-child{
-	width: 105px;
+	width: 1.05rem;
 }
 main .salary>div:last-child{
 	flex: 1;
 }
 main .salary .thead{
-	width: 105px;
-	height: 150px;
-	margin-left: 10px;
-	line-height: 150px;
+	width: 1.05rem;
+	height: 1.5rem;
+	margin-left: .1rem;
+	line-height: 1.5rem;
 	text-align: center;
 	border-bottom: 1px solid #ddd;
 }
 main .salary .row{
 	width: 100%;
-	height: 50px;
-	line-height: 50px;
-	margin-left: -10px;
-	padding: 0 10px 0 25px;
-	font-size: 12px;
+	height: .5rem;
+	line-height: .5rem;
+	margin-left: -.1rem;
+	padding: 0 .1rem 0 .25rem;
+	font-size: .12rem;
 	color: #333;
 	border-bottom: 1px solid #ddd;
 	border-left: 1px solid #ddd;
@@ -300,62 +361,70 @@ main .salary .row .value{
 	float: right;
 }
 main .learner{
-	height: 40px;
-	padding-left: 10px;
-	line-height: 40px;
+	height: .4rem;
+	padding-left: .1rem;
+	line-height: .4rem;
 	font-weight: bold;
-	font-size: 14px;
+	font-size: .14rem;
 	color: #333;
 	border-bottom: 1px solid #ddd;
 }
 main .tip{
-	padding: 0 10px;
-	line-height: 40px;
-	font-size: 12px;
+	padding: 0 .1rem;
+	line-height: .4rem;
+	font-size: .12rem;
 	color: #999;
 }
 
 footer{
-	height: 200px;
+	height: 1.8rem;
 	background-color: #26a26f;
-	border-top: 1px solid #32c086;
+	border-top: .01rem solid #32c086;
+}
+footer .us {
+	float: left;
+	width: 50%;
 }
 footer .us .change{
-	padding-left: 15px;
-	color: #fff;
-	font-size: 16px;
-	height: 80px;
-	line-height: 80px;
+    text-align: center;
+    color: #fff;
+    font-size: .16rem;
+    height: .42rem;
+    line-height: .53rem;
 }
 footer .us .about{
-	height: 80px;
-	line-height: 80px;
+	height: .4rem;
+	line-height: .4rem;
 }
 footer .us .about ul {
 	overflow: hidden;
 	margin-bottom: 0;
-	padding-left: 5px;
+	padding-left: .05rem;
 }
 footer .us .about ul li{
 	float: left;
-	height: 70px;
-	line-height: 70px;
-	list-style: none;
+    width: 100%;
+    height: .35rem;
+    text-align: center;
+    line-height: .35rem;
+    list-style: none;
 }
 footer .us .about ul li a{
 	color: #fff;
 	text-decoration: none;
-	padding: 0 10px;
-	border-right: 1px solid #fff;
+	padding: 0 .1rem;
 }
 footer .us .about ul li:last-child a{
 	border-right: none;
 }
+footer .web{
+	display: none;
+}
 footer .web .undersite{
-    height: 65px;
-    line-height: 40px;
-    padding-top: 20px;
-    font-size: 16px;
+    height: .65rem;
+    line-height: .4rem;
+    padding-top: .2rem;
+    font-size: .16rem;
     color: #fff;
 }
 footer .web .sitelist ul{
@@ -364,54 +433,58 @@ footer .web .sitelist ul{
 }
 footer .web .sitelist ul li{
 	display: inline-block;
-	height: 40px;
-	line-height: 40px;
+	height: .4rem;
+	line-height: .4rem;
 }
 footer .web .sitelist ul li a{
 	display: inline-block;
-	height: 40px;
-	margin-right: 35px;
+	height: .4rem;
+	margin-right: .35rem;
 	color: #fff;
 	text-decoration: none;
 }
 footer .web .sitelist ul li.cur a, footer .web .sitelist ul li:hover a{
-	border-bottom: 1px solid #fff;
+	border-bottom: .01rem solid #fff;
 }
 footer .qrcode{
 	position: relative;
-	height: 170px;
+	float: right;
+	width: 50%;
+	height: 1.5rem;
 }
 footer .qrcode .fllow{
-	position: absolute;
-	top: 50%;
-	margin-top: -60px;
-	width: 120px;
-	height: 120px;
-	right: 20px;
+    position: absolute;
+    top: 50%;
+    margin-top: -.63rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    right: -.1rem;
 }
 footer .qrcode span{
 	display: block;
-	height: 30px;
-	line-height: 30px;
-	font-size: 16px;
+	height: .3rem;
+	line-height: .3rem;
+	font-size: .16rem;
 	color: #fff;
 }
 footer .qrcode i{
 	display: block;
-	width: 90px;
-	height: 90px;
+	width: .94rem;
+	height: .94rem;
 	background: url(images/csssprite.png) no-repeat;
-	background-position: -1043px 0px;
+	background-size: 12rem 4rem;
+	background-position: -10.43rem 0rem;
 }
 footer .copyright{
-	height: 30px;
-	margin: 0;
-	line-height: 30px;
+    margin: 0;
+	line-height: .3rem;
 	color: #fff;
-	font-size: 12px;
+	font-size: .12rem;
 	text-align: center;
-	border-top: 1px solid #32c086;
+	border-top: .01rem solid #32c086;
+	background-color: #26a26f;
 }
+
 
 .col-xs-5ths, .col-sm-5ths, .col-md-5ths, .col-lg-5ths {
     position: relative;
@@ -419,54 +492,237 @@ footer .copyright{
     padding-right: 15px;
     padding-left: 15px;
 }
-@media ( min-width : 768px) {
-    .col-sm-5ths {
-        width: 20%;
-        float: left;
-    }
+
+
+/* 媒体查询实现自适应 */
+/* 超小屏幕（手机，小于 768px） */
+/* 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 
+是移动设备优先的吗？） */
+
+/* 小屏幕（平板，大于等于 460px） */ 
+@media (min-width : 460px) {
+	html{
+		font-size: 120px;
+	}
 }
- 
-@media ( min-width : 992px) {
-    .col-md-5ths {
-        width: 20%;
-        float: left;
-    }
-}
- 
-@media ( min-width : 1200px) {
-    .col-lg-5ths {
-        width: 20%;
-        float: left;
-    }
-}
-.col-xs-10ths, .col-sm-10ths, .col-md-10ths, .col-lg-10ths {
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-}
- 
-@media ( min-width : 768px) {
+
+/* 小屏幕（平板，大于等于 768px） */ 
+@media (min-width : 768px) {
+	html{
+		font-size: 100px;
+	}
     .col-sm-10ths {
         width: 10%;
         float: left;
     }
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+	.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+	    margin-left: 0;
+	}
+	.navbar .navbar-collapse {
+	    top: .1rem;
+	}
+	.navbar .navbar-nav>li>a{
+		height: .48rem;
+    	line-height: .4rem;
+		border-bottom: none;
+	}
+	.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+		color: #fff;
+		border-bottom: 2px solid #fff;
+	}
+	.navbar .navbar-collapse{
+		margin-right: 0;
+	}
+	.navbar-collapse{
+		padding-right: 0;
+	}
+	header .container-fluid .share {
+		display: block;
+    	top: -.03rem;
+    	left: -.15rem;
+	}
+	header .log{
+		display: none;
+	}
+	footer .us{
+		width: 70%;
+	}
+	footer .us .change{
+		height: .85rem;
+		line-height: .85rem;
+	}
+	footer .us .about ul li{
+		width: auto;
+	}
+	footer .us .about ul li a{
+		border-right: 1px solid #fff;
+	}
+	footer .qrcode{
+		width: 30%;
+	}
+	footer .us .change {
+	    text-align: left;
+	    padding-left: 15px;
+	}
 }
- 
-@media ( min-width : 992px) {
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width : 992px) {
+	html{
+		font-size: 100px;
+	}
+	.container-fluid {
+		max-width: 9.7rem;
+		position: relative;
+	}
     .col-md-10ths {
         width: 10%;
         float: left;
     }
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+    header{
+    	height: .4rem;
+    }
+    header .container-fluid {
+	    height: 40px;
+	    line-height: 40px;
+	}
+	header .container-fluid .share {
+	    display: block;
+	    top: 0;
+	    left: -.15rem;
+	}
+	header .container-fluid .hotline{
+		display: block;
+	}
+	.navbar{
+		height: 1rem;
+	}
+	.navbar .container-fluid{
+		height: 1rem;
+		overflow: visible;
+	}
+	.navbar .navbar-collapse{
+		top: 0;
+		margin-right: -.15rem;
+	}
+	.navbar .navbar-nav>li>a{
+		width: 1rem;
+		height: 1rem;
+		line-height: 1rem;
+	}
+	.navbar .navbar-nav>li:hover>a, .navbar .navbar-nav>li.cur>a{
+		border-bottom: 4px solid #fff;
+	}
+	.navbar .navbar-brand{
+		margin-top: .25rem;
+		background-size: 12rem 4rem;
+		background-position: -10.46rem -1.3rem;
+	}
+	main .dir span{
+		width: auto;
+	}
+	main .dir a{
+		float: none;
+		width: auto;
+		margin-right: 35px;
+	}
+	main .title{
+		margin: 0 10px 45px 10px;
+	    height: 40px;
+	    line-height: 5px;
+	    text-align: left;
+	}
+	footer .web{
+		display: block;
+	}
+	footer .us{
+		width: 33%;
+	}
 }
- 
-@media ( min-width : 1200px) {
-    .col-lg-10ths {
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width : 1200px) {
+	html{
+		font-size: 100px;
+	}
+	.container-fluid {
+		max-width: 11.7rem;
+		position: relative;
+	}
+    .col-md-10ths {
         width: 10%;
         float: left;
     }
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+    header{
+    	height: .4rem;
+    }
+    header .container-fluid {
+	    height: 40px;
+	    line-height: 40px;
+	}
+	header .container-fluid .share {
+	    display: block;
+	    top: 0;
+	    left: -.15rem;
+	}
+	header .container-fluid .hotline{
+		display: block;
+	}
+	.navbar{
+		height: 1rem;
+	}
+	.navbar .container-fluid{
+		height: 1rem;
+		overflow: visible;
+	}
+	.navbar .navbar-nav>li>a{
+		width: 1rem;
+		height: .99rem;
+		line-height: 1rem;
+	}
+	.navbar .navbar-nav>li:hover>a, .navbar .navbar-nav>li.cur>a{
+		border-bottom: 4px solid #fff;
+	}
+	.navbar .navbar-brand{
+		margin-top: .25rem;
+		background-size: 12rem 4rem;
+		background-position: -10.46rem -1.3rem;
+	}
+	main .jumbotron {
+	    height: 2.48rem;
+	}
+	main .breadcrumb a {
+	    height: .8rem;
+	    line-height: .8rem;
+	}
+	main .content{
+		margin-bottom: 1rem;
+	}
+	footer{
+		height: 2rem;
+	}
+	footer .container-fluid {
+		height: 1.7rem;
+	}
+	footer .web{
+		display: block;
+	}
+	footer .us{
+		width: 33%;
+	}
+	footer .qrcode{
+		height: 1.7rem;
+	}
 }
-
-
-/*媒体查询*/ 
-
