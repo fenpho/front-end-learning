@@ -113,6 +113,15 @@ nav{
 	box-sizing: border-box;
 	border-bottom: .01rem solid #fff;
 }
+.navbar .jnshu{
+	position: absolute;
+    top: .2rem;
+    left: .8rem;
+    padding-left: .1rem;
+    font-size: .16rem;
+    color: #fff;
+    border-left: 1px solid #4BBC8D;
+}
 .navbar-nav{
 	margin: 0;
 }
@@ -618,6 +627,10 @@ footer .copyright{
 	.carousel-indicators {
 	    bottom: .1rem;
 	}
+	.navbar .jnshu {
+	    top: .25rem;
+	    left: .93rem;
+	}
 }
 
 /* 小屏幕（平板，大于等于 768px） */ 
@@ -681,6 +694,9 @@ footer .copyright{
 	}
 	header .log{
 		display: none;
+	}
+	.navbar .jnshu {
+	    display: none;
 	}
 	main .feature>div{
 		height: 2.7rem;

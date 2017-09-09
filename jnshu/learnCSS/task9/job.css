@@ -128,6 +128,15 @@ nav{
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
 	background-color: #fff;
 }
+.navbar .jnshu{
+	position: absolute;
+    top: .2rem;
+    left: .8rem;
+    padding-left: .1rem;
+    font-size: .16rem;
+    color: #fff;
+    border-left: 1px solid #4BBC8D;
+}
 main{
 	background-color: #f1f1f1;
 }
@@ -504,6 +513,10 @@ footer .copyright{
 	html{
 		font-size: 120px;
 	}
+	.navbar .jnshu {
+	    top: .2rem;
+	    left: .93rem;
+	}
 }
 
 /* 小屏幕（平板，大于等于 768px） */ 
@@ -539,6 +552,9 @@ footer .copyright{
 	}
 	.navbar-collapse{
 		padding-right: 0;
+	}
+	.navbar .jnshu {
+	    display: none;
 	}
 	header .container-fluid .share {
 		display: block;
