@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html, body {
+	font: 100px "Microsoft Yahei", sans-serif;
+}
+.container-fluid {
+	max-width: 12rem;
+	font-size: .14rem;
+}
+header {
+	height: .4rem;
+	width: 100%;
+	background-color: #1d7ad9;
+}
+header .hotline{
+	float: left;
+	height: .4rem;
+	line-height: .4rem;
+	color: #fff;
+}
+header .login{
+	float: right;
+	height: .4rem;
+	line-height: .4rem;
+}
+header .login a{
+	float: left;
+	width: 55px;
+	height: 40px;
+	color: #fff;
+	text-align: center;
+	border-left: 1px solid #fff;
+}
+header .login a:last-child{
+	border-right: 1px solid #fff;
+}
+a:focus, a:hover{
+	text-decoration: none;
+}
+header .login a.cur, header .login a:hover{
+	color: #333;
+	background-color: #fff;
+}
