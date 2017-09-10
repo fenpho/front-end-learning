@@ -82,10 +82,10 @@ nav{
 	background-color: #29b078;
 }
 .navbar .navbar-collapse {
+	width: 100%;
     margin-right: -.25rem;
     position: absolute;
     top: .59rem;
-    right: 0;
     z-index: 9999;
     background-color: #29b078;
     border: none;
@@ -105,22 +105,18 @@ nav{
 	padding: 0;
 	width: .7rem;
 	height: .35rem;
+	margin: 0 auto;
 	line-height: .35rem;
 	font-size: .16rem;
 	text-align: center;
 	color: #fff;
 	box-sizing: border-box;
-	border-bottom: .01rem solid #fff;
 }
 .navbar-nav{
 	margin: 0;
 }
 .navbar-toggle .icon-bar{
 	width: .12rem;
-}
-.navbar .navbar-collapse{
-	margin-right: -.17rem;
-	padding-left: 0;
 }
 .navbar-default .navbar-toggle{
 	background-color: #fff;
@@ -279,7 +275,7 @@ footer{
 }
 footer .us {
 	float: left;
-	width: 50%;
+	width: 100%;
 }
 footer .us .change{
     text-align: center;
@@ -343,6 +339,7 @@ footer .web .sitelist ul li.cur a, footer .web .sitelist ul li:hover a{
 	border-bottom: .01rem solid #fff;
 }
 footer .qrcode{
+	display: none;
 	position: relative;
 	float: right;
 	width: 50%;
@@ -451,6 +448,10 @@ footer .copyright{
 	    top: .25rem;
 	    left: .93rem;
 	}
+	.navbar .navbar-collapse {
+		right: 0;
+		width: auto;
+	}
 	main .breadcrumb {
 	    background-color: #f1f1f1;
 	}
@@ -507,6 +508,7 @@ footer .copyright{
 		border-right: 1px solid #fff;
 	}
 	footer .qrcode{
+		display: block;
 		width: 30%;
 	}
 	footer .us .change {
