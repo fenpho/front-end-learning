@@ -475,7 +475,6 @@ main .cooperation .qiniu{
 	border-radius: 50%;
 }
 footer{
-	height: 1.8rem;
 	background-color: #26a26f;
 	border-top: .01rem solid #32c086;
 }
@@ -491,7 +490,6 @@ footer .us .change{
     line-height: .53rem;
 }
 footer .us .about{
-	height: .4rem;
 	line-height: .4rem;
 }
 footer .us .about ul {
@@ -545,19 +543,19 @@ footer .web .sitelist ul li.cur a, footer .web .sitelist ul li:hover a{
 	border-bottom: .01rem solid #fff;
 }
 footer .qrcode{
-	display: none;
 	position: relative;
 	float: right;
-	width: 50%;
+	width: 100%;
 	height: 1.5rem;
 }
 footer .qrcode .fllow{
     position: absolute;
     top: 50%;
-    margin-top: -.63rem;
+    right: 50%;
+    margin-right: -.75rem;
+    margin-top: -.6rem;
     width: 1.2rem;
     height: 1.2rem;
-    right: -.1rem;
 }
 footer .qrcode span{
 	display: block;
@@ -627,6 +625,24 @@ footer .copyright{
 	.navbar .jnshu {
 	    top: .25rem;
 	    left: .93rem;
+	}
+	footer .us{
+		width: 70%;
+	}
+	footer .qrcode{
+		display: block;
+		width: 30%;
+	}
+	footer .qrcode .fllow{
+		right: -.1rem;
+    	margin-right: 0;
+	}
+	footer .us .change {
+	    text-align: left;
+	    padding-left: 15px;
+	}
+	footer .us .about ul li{
+		text-align: left;
 	}
 }
 
