@@ -397,8 +397,7 @@ footer .copyright{
 		font-size: .21rem;
 	}
 	nav .menu{
-		/*display: none;*/
-
+		display: none;
 	}
 	nav .navbar-toggle{
 		position: absolute;
@@ -430,29 +429,292 @@ footer .copyright{
 		padding: .08rem;
 		text-align: center;
 	}
+	main .progress{
+		width: 3.2rem;
+		margin: 0 auto;
+		padding-bottom: .2rem;
+	}
+	main .progress ul{
+		height: auto;
+	}
+	main .progress li{
+		width: 1.6rem;
+		height: 1.3rem;
+	}
+	main .progress li .step-border{
+		width: .68rem;
+	}
+	main .customization .title{
+		font-size: .18rem;
+	}
+	main .customization .title i{
+		top: .02rem;
+	}
+	main .table .col {
+	    width: 100%;
+	    height: .62rem;
+	    text-align: center;
+	}
+	main .table .detail{
+		display: none;
+	}
+	main .table .box .col:nth-child(3){
+		padding-bottom: .2rem;
+	}
+	main .table .next{
+		height: 1.4rem;
+	}
+	footer{
+		height: auto;
+	}
+	footer .webinfo{
+		height: auto;
+		overflow: hidden;
+	}
+	footer .webinfo .webname{
+		width: 100%;
+		text-align: center;
+	}
+	footer .webinfo .link{
+		width: 100%;
+		text-align: center;
+	}
+	footer .webinfo .link a{
+		width: 100%;
+	}
+	footer .webinfo .contact{
+		width: 100%;
+		padding-left: .2rem;
+		padding-top: .2rem;
+	}
+	footer .webinfo .contact i{
+		top: .68rem;
+		right: .2rem;
+	}
 }
 /* 小屏幕（平板，大于等于 460px） */ 
-@media (min-width : 460px) {
+@media screen and (min-width: 460px) and (max-width: 767px) {
 	html{
 		font-size: 120px;
 	}
-	
+	nav{
+		height: .75rem;
+	}
+	nav .logo .cn{
+		text-align: center;
+		font-size: .21rem;
+	}
+	nav .menu{
+		display: none;
+		width: 100%;
+	}
+	nav .navbar-toggle{
+		position: absolute;
+    	right: 0;
+    	padding: .06rem .04rem 0 .04rem;
+    	margin-top: .2rem;
+    	margin-right: .15rem;
+    	margin-bottom: .08rem;
+    	background-color: #1d7ad9;
+    	background-image: none;
+    	border: 1px solid transparent;
+    	border-radius: 4px;
+	}
+	nav .navbar-toggle:focus{
+		outline: none;
+	}
+	.navbar-toggle .icon-bar {
+	    display: block;
+    	width: .22rem;
+    	height: .02rem;
+    	margin-bottom: .06rem;
+    	border-radius: 1px;
+    	background-color: #fff;
+	}
+	nav .menu ul li{
+		width: 100%;
+	}
+	nav .menu ul li a{
+		padding: .08rem;
+		text-align: center;
+	}
+	main .progress{
+		width: 3.2rem;
+		margin: 0 auto;
+		padding-bottom: .2rem;
+	}
+	main .progress ul{
+		height: auto;
+	}
+	main .progress li{
+		width: 1.6rem;
+		height: 1.3rem;
+	}
+	main .progress li .step-border{
+		width: .68rem;
+	}
+	main .customization .title{
+		font-size: .18rem;
+	}
+	main .customization .title i{
+		top: .02rem;
+	}
+	main .table .col {
+	    width: 100%;
+	    height: .62rem;
+	    text-align: center;
+	}
+	main .table .detail{
+		display: none;
+	}
+	main .table .box .col:nth-child(3){
+		padding-bottom: .2rem;
+	}
+	main .table .next{
+		height: 1.4rem;
+	}
+	footer{
+		height: auto;
+	}
+	footer .webinfo{
+		height: auto;
+		overflow: hidden;
+	}
+	footer .webinfo .webname{
+		width: 100%;
+		text-align: center;
+	}
+	footer .webinfo .link{
+		width: 100%;
+		text-align: center;
+	}
+	footer .webinfo .link a{
+		width: 100%;
+	}
+	footer .webinfo .contact{
+		width: 100%;
+		padding-left: .2rem;
+		padding-top: .2rem;
+	}
+	footer .webinfo .contact i{
+		top: .68rem;
+		right: .2rem;
+	}
 }
 
 /* 小屏幕（平板，大于等于 768px） */ 
-@media (min-width : 768px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
 	html{
 		font-size: 100px;
 	}
-    
+	nav .logo .cn{
+		font-size: .24rem;
+	}
+	nav .menu ul li{
+		margin-right: .4rem;
+	}
+	nav .menu ul li a{
+		padding: .08rem;
+	}
+	main .progress{
+		width: 7.68rem;
+	}
+	main .progress ul{
+		height: auto;
+	}
+	main .progress li{
+		width: 1.1rem;
+		height: 1.3rem;
+	}
+	main .progress li .step-border{
+		width: .43rem;
+	}
+	main .customization .title{
+		font-size: .18rem;
+	}
+	main .customization .title i{
+		top: .02rem;
+	}
+	main .table .col{
+		margin-right: .2rem;
+	}
+	main .table .detail{
+		right: 0;
+	}
+	main .table .material{
+		height: 1.4rem;
+		line-height: .7rem;
+	}
+	main .table .next{
+		height: 2rem;
+	}
+	main .table .material .detail{
+		top: .86rem;
+	}
+	footer .webinfo .link{
+		padding-left: .4rem;
+		box-sizing: border-box;
+	}
+	footer .webinfo .contact{
+		padding-left: 0;
+	}
 }
 
 /* 中等屏幕（桌面显示器，大于等于 992px） */
-@media (min-width : 992px) {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
 	html{
 		font-size: 100px;
 	}
-	
+	nav .logo .cn{
+		font-size: .24rem;
+	}
+	nav .menu ul li{
+		margin-right: .5rem;
+	}
+	nav .menu ul li a{
+		padding: .09rem;
+	}
+	main .progress{
+		width: 9.92rem;
+	}
+	main .progress ul{
+		height: auto;
+	}
+	main .progress li{
+		width: 1.3rem;
+		height: 1.3rem;
+	}
+	main .progress li .step-border{
+		width: .53rem;
+	}
+	main .customization .title{
+		font-size: .22rem;
+	}
+	main .customization .title i{
+		top: .04rem;
+	}
+	main .table .col{
+		margin-right: .2rem;
+	}
+	main .table .detail{
+		right: 0;
+	}
+	main .table .material{
+		line-height: 1.4rem;
+	}
+	main .table .next{
+		height: 2.4rem;
+	}
+	main .table .material .detail{
+		top: .43rem;
+	}
+	footer .webinfo .link{
+		padding-left: .4rem;
+		box-sizing: border-box;
+	}
+	footer .webinfo .contact{
+		padding-left: .47rem;
+	}
 }
 
 /* 大屏幕（大桌面显示器，大于等于 1200px） */
