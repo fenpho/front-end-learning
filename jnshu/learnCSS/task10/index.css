@@ -1,3 +1,4 @@
+@charset "utf-8";
 *{
 	margin: 0;
 	padding: 0;
@@ -5,8 +6,10 @@
 html, body {
 	font: 100px "Microsoft Yahei", sans-serif;
 }
-.container-fluid {
+.center {
+	min-width: 3.2rem;
 	max-width: 12rem;
+	margin: 0 auto;
 	font-size: .14rem;
 }
 header {
@@ -31,6 +34,7 @@ header .login a{
 	height: 40px;
 	color: #fff;
 	text-align: center;
+	text-decoration: none;
 	border-left: 1px solid #fff;
 }
 header .login a:last-child{
@@ -42,4 +46,419 @@ a:focus, a:hover{
 header .login a.cur, header .login a:hover{
 	color: #333;
 	background-color: #fff;
+}
+
+nav{
+	height: 1rem;
+	background-color: #f9f9f9;
+	font-size: .14rem
+}
+nav .logo{
+	float: left;
+	padding: .15rem 0;
+}
+nav .logo span{
+	display: block;
+}
+nav .logo .cn{
+	font-weight: bold;
+	color: #1d7ad9;
+	font-size: .42rem;
+}
+nav .logo .en{
+	color: #1d7ad9;
+	font-size: .12rem;
+}
+nav .menu{
+	float: right;
+	padding-top: .25rem;
+}
+nav .menu ul{
+	list-style: none;
+	overflow: hidden;
+}
+nav .menu ul li{
+	float: left;
+	margin-right: .6rem;
+	background-color: #fff;
+	border-radius: 5px;
+}
+nav .menu ul li:last-child{
+	margin-right: 0;
+}
+nav .menu ul li a{
+	display: block;
+	padding: .15rem;
+	font-size: .16rem;
+	color: #333;
+	border-radius: 5px;
+}
+nav .menu ul li.cur a, nav .menu ul li:hover a{
+	color: #fff;
+	background-color: #1d7ad9;
+}
+nav .menu ul li a{
+	text-decoration: none;
+}
+main{
+	overflow: hidden;
+	width: 100%;
+}
+main .center{
+	overflow: hidden;
+}
+main .progress{
+	overflow: hidden;
+}
+main .progress ul{
+	float: right;
+	height: 1.6rem;
+	overflow: hidden;
+	list-style: none;
+}
+main .progress li{
+	float: left;
+	width: 1.6rem;
+	height: 1.6rem;
+	padding-top: .4rem;
+	box-sizing: border-box;
+}
+main .progress li .step-border{
+	float: left;
+	width: .68rem;
+	height: 0;
+	margin-top: .1rem;
+	border-top: 5px solid #ccc;
+}
+main .progress li .step{
+	overflow: hidden;
+}
+main .progress li .step-num{
+	float: left;
+	width: .26rem;
+	height: .26rem;
+	line-height: .25rem;
+	margin: 0 -.01rem;
+	text-align: center;
+	color: #fff;
+	background-color: #ccc;
+	border-radius: 50%;
+}
+main .progress li .info{
+	display: block;
+	height: .7rem;
+	line-height: .7rem;
+	color: #ccc;
+	font-size: .18rem;
+	text-align: center;
+}
+main .progress li:last-child .end{
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+}
+main .progress li.cur .step-num{
+	background-color: #ff7f02;
+}
+main .progress li.cur .step-border{
+	border-top: 5px solid #ff7f02;
+	border-radius: 2px;
+}
+main .progress li.cur .info{
+	color: #ff7f02;
+}
+main .customization .title{
+	color: #333;
+	font-size: .22rem;
+	padding-left: .1rem;
+	position: relative;
+}
+main .customization .title i{
+	position: absolute;
+	top: .05rem;
+	left: 0;
+	width: .04rem;
+	height: .22rem;
+	border-radius: 2px;
+	background-color: #1d7ad9;
+}
+main .table{
+	margin-top: .15rem;
+	margin-bottom: .55rem;
+	border: 1px solid #e7e7e7;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+main .table .thead{
+	height: .45rem;
+	line-height: .45rem;
+	padding-left: .45rem;
+	color: #1d7ad9;
+	font-size: .18rem;
+	background: url(images/box.png) no-repeat .15rem; center;
+	background-color: #f3f3f3;
+}
+main .table .row{
+	position: relative;
+	clear: both;
+	background-color: #fbfcff;
+}
+main .table .box{
+	padding: 0 .5rem;
+	height: .85rem;
+	line-height: .85rem;
+}
+main .table .col{
+	float: left;
+	margin-right: .65rem;
+	text-align: left;
+}
+main .table .detail{
+	position: absolute;
+	right: -.5rem;
+	top: 50%;
+	margin-top: -.4rem;
+	text-align: right;
+}
+main .table .radio{
+	position: relative;
+	padding-left: .15rem;
+	font-size: .18rem;
+	color: #666;
+}
+main .table .radio input{
+	opacity: 0;
+}
+.table .radio i{
+	position: absolute;
+	top: .03rem;
+	left: -.05rem;
+	width: .18rem;
+	height: .18rem;
+	box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 1px solid #d6d6d6;
+}
+.table .radio i:after{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: .04rem;
+	height: .04rem;
+	margin-top: -.02rem;
+	margin-left: -.02rem;
+	background-color: #fff;
+	border-radius: 50%;
+}
+.table .radio input:checked+i{
+	background-color: #1d7ad9;
+}
+.table .detail .select{
+	width: 1.3rem;
+	height: .4rem;
+	padding-left: .15rem;
+	font-size: .18rem;
+	color: #999;
+	border: 1px solid #e8e8e8;
+	box-sizing: border-box;
+	appearance:none; 
+	-moz-appearance:none;
+	-webkit-appearance:none;
+	background: url("images/dropdown-icon.png") no-repeat 1rem center transparent;
+}
+main .table .size{
+	height: .6rem;
+	padding: .1rem .5rem;
+	line-height: .6rem;
+}
+main .table .bore{
+	padding-top: 0;
+}
+main .table .external{
+	padding-bottom: 0;
+}
+.table .size .text{
+	font-size: .18rem;
+	color: #666;
+}
+.table .size .text input{
+	width: .7rem;
+	height: .3rem;
+	margin: 0 .05rem;
+	border: 1px solid #e8e8e8;
+	outline: none;
+}
+main .table .size .detail{
+	top: .82rem;
+	z-index: 1;
+}
+main .table .material .detail{
+	top: .43rem;
+}
+
+main .table .material{
+	padding: 0 .5rem;
+	height: 1.4rem;
+	line-height: 1.4rem;
+}
+main .table .next{
+	position: relative;
+	height: 2.8rem;
+	background-color: #fff;
+	border-top: 1px solid #e7e7e7;
+}
+main .table .next a{
+	position: absolute;
+	width: 1.8rem;
+	height: .46rem;
+	left: 50%;
+	top: 50%;
+	margin-left: -.9rem;
+	margin-top: -.23rem;
+	line-height: .46rem;
+	color: #fff;
+	font-size: .24rem;
+	text-decoration: none;
+	text-align: center;
+	border-radius: 5px;
+	background-color: #e15053;
+}
+
+footer{
+	height: 2.4rem;
+	background-color: #f9f9f9;
+}
+footer .webinfo{
+	height: 2rem;
+	padding: .6rem 0;
+	box-sizing: border-box;
+}
+footer .webinfo>div{
+	float: left;
+	width: 33.3333%
+}
+footer .webinfo .webname{
+	padding-left: 0;
+	font-size: .18rem;
+	color: #999;
+}
+footer .webinfo .link a{
+	float: left;
+	margin-right: .4rem;
+	height: .35rem;
+	line-height: .35rem;
+	color: #999;
+	text-decoration: none;
+}
+footer .webinfo .contact{
+	position: relative;
+	padding-left: 1.5rem;
+	box-sizing: border-box;
+}
+footer .webinfo .contact span{
+	display: block;
+	height: .3rem;
+	line-height: .3rem;
+	color: #999;
+}
+footer .webinfo .contact i{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	width: .92rem;
+	height: .92rem;
+	margin-top: -.46rem;
+	background: url(images/qrcode.png) no-repeat;
+}
+footer .webinfo .link a.cur, footer .webinfo .link a:hover{
+	color: #1d7ad9;
+}
+footer .copyright{
+	height: .4rem;
+	line-height: .4rem;
+	font-size: .12rem;
+	text-align: center;
+	color: #fff;
+	background-color: #1d7ad9;
+}
+
+/* 媒体查询实现自适应 */
+
+@media (max-width : 459px) {
+	html{
+		font-size: 100px;
+	}
+	nav{
+		height: .75rem;
+	}
+	nav .logo .cn{
+		text-align: center;
+		font-size: .21rem;
+	}
+	nav .menu{
+		/*display: none;*/
+
+	}
+	nav .navbar-toggle{
+		position: absolute;
+    	right: 0;
+    	padding: .06rem .04rem 0 .04rem;
+    	margin-top: .2rem;
+    	margin-right: .15rem;
+    	margin-bottom: .08rem;
+    	background-color: #1d7ad9;
+    	background-image: none;
+    	border: 1px solid transparent;
+    	border-radius: 4px;
+	}
+	nav .navbar-toggle:focus{
+		outline: none;
+	}
+	.navbar-toggle .icon-bar {
+	    display: block;
+    	width: .22rem;
+    	height: .02rem;
+    	margin-bottom: .06rem;
+    	border-radius: 1px;
+    	background-color: #fff;
+	}
+	nav .menu ul li{
+		width: 100%;
+	}
+	nav .menu ul li a{
+		padding: .08rem;
+		text-align: center;
+	}
+}
+/* 小屏幕（平板，大于等于 460px） */ 
+@media (min-width : 460px) {
+	html{
+		font-size: 120px;
+	}
+	
+}
+
+/* 小屏幕（平板，大于等于 768px） */ 
+@media (min-width : 768px) {
+	html{
+		font-size: 100px;
+	}
+    
+}
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+@media (min-width : 992px) {
+	html{
+		font-size: 100px;
+	}
+	
+}
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+@media (min-width : 1200px) {
+	html{
+		font-size: 100px;
+	}
+	
 }
