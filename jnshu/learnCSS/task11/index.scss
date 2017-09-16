@@ -1,5 +1,21 @@
 $color : #fff;
 $bgcolor : #5fc0cd;
+$l : left;
+@mixin size($width: 100%, $height: .47rem){
+	width : $width;
+	height : $height;
+}
+.search_box {
+	display: block;
+	@include size();
+	margin-bottom: .1rem;
+	padding: .1rem 0 .1rem .57rem;
+	box-sizing: border-box;
+	background: url(images/locked.png) 22px center no-repeat;
+	background-size: .15rem;
+	background-color: $color;
+}
+
 *{
 	margin: 0;
 	padding: 0;
@@ -11,8 +27,7 @@ html,body{
 	color: $color;
 	.header{
 		background-color: $bgcolor;
-	    height: .4rem;
-	    width: 100%;
+	    @include size(100%, .4rem);
 	    font-size: .14rem;
 	    line-height: .4rem;
 	    text-align: center;
@@ -23,7 +38,7 @@ html,body{
 			color: $color;
 		}
 		.close{
-			float: left;
+			float: $l;
 		}
 		.login{
 			font-size: .16rem;
@@ -39,27 +54,18 @@ html,body{
 		padding-top: .1rem;
 		position: relative;
 		.passwd{
-			display: block;
-			width: 100%;
-			height: .47rem;
-			margin-bottom: .1rem;
-			padding: .1rem 0 .1rem .57rem;
-			box-sizing: border-box;
-			background: url(images/locked.png) 22px center no-repeat;
-			background-size: .15rem;
-			background-color: $color;
+			@extend .search_box;
+			background-image: url(images/iphone.png);
 			input{
-				width: 100%;
-				height: .28rem;
+				@include size(100%, .28rem);
 				outline: none;
 				padding-left: .1rem;
 				border: none;
-				border-left: 1px solid #bababa;
+				border-#{$l}: 1px solid #bababa;
 			}
 		}
 		.btn-login{
-			width: 100%;
-			height: .5rem;
+			@include size(100%, .5rem);
 			background-color: $bgcolor;
 			border: none;
 			a{
@@ -68,22 +74,14 @@ html,body{
 			}
 		}
 		.tel{
-			display: block;
-			width: 100%;
-			height: .47rem;
-			margin-bottom: .1rem;
-			padding: .1rem 0 .1rem .57rem;
-			box-sizing: border-box;
-			background: url(images/iphone.png) 22px center no-repeat;
-			background-size: .15rem;
-			background-color: $color;
+			@extend .search_box;
+			background-image: url(images/locked.png);
 			input{
-				width: 100%;
-				height: .28rem;
+				@include size(100%, .28rem);
 				outline: none;
-				padding-left: .1rem;
+				padding-#{$l}: .1rem;
 				border: none;
-				border-left: 1px solid #bababa;
+				border-#{$l}: 1px solid #bababa;
 			}
 		}
 		.forget{
