@@ -491,6 +491,11 @@ footer .copyright{
 		top: .68rem;
 		right: .2rem;
 	}
+	footer .copyright{
+		height: auto;
+		line-height: .2rem;
+		font-size: 12px;
+	}
 }
 /* 小屏幕（平板，大于等于 460px） */ 
 @media screen and (min-width: 460px) and (max-width: 767px) {
@@ -599,6 +604,10 @@ footer .copyright{
 	footer .webinfo .contact i{
 		top: .68rem;
 		right: .2rem;
+	}
+	footer .copyright{
+		height: auto;
+		line-height: .2rem;
 	}
 }
 
