@@ -1,0 +1,173 @@
+@import "reset";
+$bgcolor: #5fc0cd;;
+$color: #fff;
+@mixin box($width: 100%, $height: .45rem){
+	width : $width;
+	height : $height;
+}
+
+html {
+	font-size: 100px;
+	.Site {
+    	display: flex;
+    	flex-direction: column;
+    	overflow: hidden;
+    	overflow-y: auto;
+    	width: 100%;
+    	min-height: 100vh;
+    	min-width: 320px;
+    	max-width: 1920px;
+    	margin: .45rem 0 .75rem 0;
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 999;
+			@include box();
+			min-width: 320px;
+			color: $color;
+			background-color: $bgcolor;
+			h2 {
+				font-size: .16rem;
+			}
+			.back {
+		    position: absolute;
+		    left: .10rem;
+		    top: .08rem;
+		    font-size: .2rem;
+			}
+		}
+    	.Site-content {
+		    flex: 1;
+		    .banner {
+				display: flex;
+				align-items: center;
+				@include box(100%, 1.6rem);
+				padding-left: .26rem;
+				background: url(../images/bg.png) center top no-repeat;
+				background-size: cover;
+				.user-pic {
+					position: relative;
+					float: left;
+					@include box(.85rem, .85rem);
+					img {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+					}
+				}
+				.user-info {
+					float: left;
+					margin-left: .3rem;
+					color: $color;
+					.user-name {
+						display: block;
+						height: .4rem;
+						font-size: .16rem;
+						line-height: .4rem;
+					}
+					.location {
+					    display: block;
+					    padding-left: .22rem;
+					    font-size: .14rem;
+					    background: url(../images/location1.png) left center no-repeat;
+					    background-size: .12rem .16rem;
+					}
+				}
+			}
+			.skill{
+				.skill-title {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					height: .5rem;
+					padding-left: .13rem;
+					border-bottom: 1px solid #ccc;
+					h3 {
+					    height: .15rem;
+					    padding-left: .07rem;
+					    border-left: 3px solid $bgcolor;
+						font-size: .16rem;
+					    line-height: .15rem;
+					    font-weight: normal;
+					}
+				}
+				.list {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					padding: 0 .2rem;
+					li {
+					    display: flex;
+					    align-items: center;
+					    box-sizing: border-box;
+					    width: 100%;
+					    min-height: .5rem;
+					    padding: .1rem 0;
+					    border-bottom: 1px solid #ccc;
+					    font-size: .14rem;
+					    line-height: .24rem;
+					    list-style: none;
+					}
+					.item1, .item2 {
+						padding-left: .23rem;
+						border-left: 1px solid #ccc;
+						padding-left: .27rem;
+    					margin-right: .1rem;
+    					background: url(../images/star.png) .08rem center no-repeat;
+    					background-size: .12rem;
+					}
+					.list-title {
+						padding-right: .1rem;
+						padding-left: .08rem;
+						border-right: 1px solid #ccc;
+						color: #999;
+						line-height: .2rem;
+					}
+					.list-content {
+						flex: 1;
+						padding-left: .1rem;
+					}
+				}
+			}
+		}
+		footer {
+			display: flex;
+			align-items: center;
+			position: fixed;
+			padding: 0 .2rem;
+			bottom: 0;
+			left: 0;
+			@include box(100%, .75rem);
+			min-width: 320px;
+			box-sizing: border-box;
+			font-size: .16rem;
+			text-align: center;
+			background-color: $color;
+			.message {
+				display: block;
+				flex: 1;
+				height: .44rem;
+				margin-right: .1rem;
+				border: 2px solid $bgcolor;
+				color: $bgcolor;
+				line-height: .44rem;
+				border-radius: 5px;
+			}
+			.tel {
+				display: block;
+				flex: 1;
+				height: .44rem;
+				border: 1px solid $bgcolor;
+				color: $color;
+				line-height: .44rem;
+				background-color: $bgcolor;
+				border-radius: 5px;
+			}
+		}
+	}
+}

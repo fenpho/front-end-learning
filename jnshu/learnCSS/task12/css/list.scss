@@ -1,0 +1,266 @@
+@import "reset";
+$bgcolor: #5fc0cd;
+@mixin box($width: 100%, $height: .45rem){
+	width : $width;
+	height : $height;
+}
+.icon{
+	position: absolute;
+	@include box(.13rem, .13rem);
+	background: url(../images/csssprite.png) no-repeat;
+	background-size: 1.67rem .75rem;
+}
+
+html {
+    font-size: 100px;
+    .Site {
+	    display: flex;
+	    flex-direction: column;
+	    width: 100%;
+	    min-height: 100vh;
+	    min-width: 320px;
+	    max-width: 1920px;
+	    overflow: hidden;
+	    overflow-y: auto;
+	    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    	font-size: 14px;
+    	line-height: 1.42857143;
+    	color: #333;
+    	background-color: #fff;
+		header {
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    z-index: 999;
+		    @include box(100%, .45rem);
+		    min-width: 320px;
+		    color: #fff;
+		    background-color: $bgcolor;
+		    .nav {
+			   background-color: #55a8b3;
+			   border-radius: 4px;
+			   padding-left: 0;
+			   list-style: none;
+			   li {
+			   	    position: relative;
+				    display: block;
+				    float: left;
+				    a{
+				    	padding: .06rem .12rem;
+				    	color: #fff;
+				    	border-radius: 4px;
+				    	position: relative;
+    					display: block;
+    					text-decoration: none;
+				    }
+				    &.active a, &:hover a{
+				    	color: #69c4d0;
+    					background-color: #fff;
+				    }
+				}
+			}
+		}
+		.Site-content {
+		    flex: 1;
+		    padding: .85rem 0;
+		    .table-title {
+			    position: fixed;
+			    z-index: 999;
+			    top: .45rem;
+			    left: 0;
+			    @include box(100%, .4rem);
+			    margin: 0;
+			    padding: 0;
+			    background-color: #fff;
+			    border-bottom: 1px solid #e1e5e7;
+			    .col-xs-4{
+		    		width: 33.33333%;
+		    		float: left;
+		    		.dropdown{
+		    			position: relative;
+						display: flex;
+   						align-items: center;
+   						justify-content: center;
+   						@include box(100%, .4rem);
+   						line-height: .4rem;
+   						.sel-title{
+   							position: relative;
+   							display: block;
+   							@include box(100%, .3rem);
+   							line-height: .3rem;
+   							text-align: center;
+							border-right: 1px solid #e1e5e7;
+   							i{
+   								position: absolute;
+  								right: 10px;
+  								top: 50%;
+  								margin-top: -2px;
+  								border-top: 5px solid #999;
+  								border-left: 4px solid transparent;
+  								border-right: 4px solid transparent;
+   							}
+   						}
+						.select{
+							opacity: 0;
+							position: absolute;
+							@include box(100%, .4rem);
+							left: 0;
+							top: 0;
+							padding:2px 0;
+							text-align: center;
+							border: none;
+							outline: none;
+						}
+					}
+		    	}		  
+			}
+			.table-content {
+				padding: .15rem .3rem;
+			    border-bottom: 1px solid #e1e5e7;
+			    a{
+			    	color: #337ab7;
+			    	text-decoration: none;
+			    	.date {
+					    position: relative;
+					    padding-left: .2rem;
+					    font-size: .14rem;
+					    color: #999;
+					    i {
+						    top: .01rem;
+						    left: 0;
+						    @extend .icon;
+						}
+					}
+					.table-list {
+					    display: flex;
+					    width: 100%;
+					    overflow: hidden;
+					    .text-wrap {
+						    flex: 1;
+						    overflow: hidden;
+						    p {
+							    color: #333;
+							    white-space: nowrap;
+							    text-overflow: ellipsis;
+							    overflow: hidden;
+							    margin: .1rem .2rem;
+							}
+						}
+						.time {
+						    position: relative;
+						    width: .72rem;
+						    margin: .1rem;
+						    padding-right: .1rem;
+						    color: #e63b0e;
+						    i {
+							    top: .03rem;
+							    right: -.12rem;
+							    @extend .icon;
+							    background-position: -.3rem .01rem;
+							}
+						}
+					}
+					.location {
+					    position: relative;
+					    padding-left: .2rem;
+					    font-size: .14rem;
+					    color: #999;
+					    i {
+						    top: .01rem;
+						    left: 0;
+						    @extend .icon;
+						    background-position: -1.16rem .01rem;
+						}
+					}
+			    }
+			}
+		}
+		footer {
+		    display: flex;
+		    align-items: center;
+		    position: fixed;
+		    bottom: 0;
+		    left: 0;
+		    width: 100%;
+		    min-width: 320px;
+		    height: .5rem;
+		    background-color: #f8fafb;
+		    border-top: 1px solid #e1e5e7;
+		    box-sizing: border-box;
+		    .container-fluid {
+			    width: 100%;
+			    text-align: center;
+			    .row {
+				    padding: .15rem .3rem;
+				    overflow: hidden;
+				    .col-xs-4 {
+				    	float: left;
+					    width: 33.33333333%;
+					    .btn {
+					    	display: block;
+					    	width: 100%;
+						    padding: 0;
+						    background-color: #f8fafb;
+						    cursor: default;
+						    outline: none;
+						    border: none;
+					    	.footer-home {
+							    display: inline-block;
+							    position: relative;
+							    text-decoration: none;
+							    top: .02rem;
+							    padding-top: .2rem;
+							    color: $bgcolor;
+							    i {
+								    top: 0;
+								    left: 50%;
+								    margin-left: -.12rem;
+								    @extend .icon;
+								    width: .24rem;
+								    height: .2rem;
+								    background-position: -.53rem .01rem;
+								}
+							}
+							.footer-edit {
+							    position: relative;
+							    display: inline-block;
+							    color: #000;
+							    i {
+								    top: -.15rem;
+								    left: 50%;
+								    @extend .icon;
+								    width: .4rem;
+								    height: .4rem;
+								    margin-left: -.12rem;
+								    background-color: $bgcolor;
+								    background-position: -.28rem -.22rem;
+								    border-radius: 50%;
+								}
+							}
+							.footer-user {
+							    display: inline-block;
+							    position: relative;
+							    top: .02rem;
+							    padding-top: .2rem;
+							    color: #999;
+							    text-decoration: none;
+							    i {
+								    top: 0;
+								    left: 50%;
+								    @extend .icon;
+								    width: .24rem;
+								    height: .2rem;
+								    margin-left: -.12rem;
+								    background-position: 0rem -.31rem;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
