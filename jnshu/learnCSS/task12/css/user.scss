@@ -38,6 +38,10 @@ html {
 		    left: .10rem;
 		    top: .08rem;
 		    font-size: .2rem;
+		    a{
+		    	color: $color;
+		    	text-decoration: none;
+		    }
 			}
 		}
     	.Site-content {
