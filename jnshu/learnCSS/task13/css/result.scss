@@ -1,0 +1,264 @@
+$bgcolor: #29bde0;
+$color: #fff;
+@mixin bgbox($width: 100%, $height: 100%){
+	width: $width;
+	height: $height;
+	background: url(../images/csssprite.png) no-repeat;
+	background-size: 2.5rem 1rem;
+}
+html{
+	font-size: 100px;
+	width: 100%;
+	overflow-x: hidden;
+	min-width: 320px;
+	.row, p{
+	    margin: 0;
+	    padding: 0 .1rem;
+	}
+	header{
+		position: fixed;
+		height: .45rem;
+		width: 100%;
+		min-width: 3.2rem;
+		line-height: .45rem;
+		text-align: center;
+		color: $color;
+		background-color: $bgcolor;
+		overflow: hidden;
+		z-index: 999;
+		border-bottom: 1px solid #74d4eb;
+		.result{
+			height: .45rem;
+			line-height: .45rem;
+			margin: 0;
+			font-size: .18rem;
+		}
+		.home{
+		    position: absolute;
+		    left: .1rem;
+		    top: .12rem;
+		    width: .25rem;
+		    height: .20rem;
+		    border: none;
+		    outline: none;
+		    padding: 0;
+		    a{
+				display: block;
+				@include bgbox(100%, 100%);
+			    background-position: -1.04rem 0;
+			    background-color: $bgcolor;
+			}
+		}
+		.info{
+		    position: absolute;
+		    right: .1rem;
+		    top: .12rem;
+		    @include bgbox(.21rem, .21rem);
+		    background-position: -1.43rem 0;
+		    border: none;
+		    outline: none;
+		    opacity: 1;
+		}
+	}
+	.container-fluid{
+		padding: 0;
+		min-width: 3.2rem;
+	}
+	main{
+		position: relative;
+		padding: .45rem 0rem .5rem;
+		box-sizing: border-box;
+		margin-bottom: .85rem;
+		.the-end{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			padding-bottom: .3rem;
+			background-color: $bgcolor;
+			.pic{
+				width: 1.75rem;
+				height: 1rem;
+				margin: .2rem 0;
+				position: relative;
+				img{
+					width: 100%;
+				}
+				span{
+					position: absolute;
+					bottom: .05rem;
+					left: .52rem;
+					color: $color;
+					font-size: .18rem;
+				}
+			}
+			p{
+				line-height: .3rem;
+				color: #ffc865;
+				font-size: .16rem;
+				text-align: left;
+			}
+		}
+		.result-data{
+			padding-bottom: .15rem;
+			color: $color;
+			font-size: .12rem;
+			line-height: .3rem;
+			background-color: $bgcolor;
+		}
+		.data-list{
+			overflow: hidden;
+			.col-xs-4{
+				width: 33.33333%;
+				padding: 0;
+				float: left;
+			}
+			p{
+				padding: 0;
+			} 
+		}
+		.result-list{
+			width: 100%;
+			padding: 0;
+			background-color: $color;
+			.day{
+				padding: 0 .3rem;
+				padding-bottom: .1rem;
+				border-bottom: 2px solid #dddddd;
+				font-size: .16rem;
+			}
+			p{
+				line-height: .3rem;
+				color: #a6a6a6;
+			}
+			.detail-time{
+				height: .35rem;
+				padding: 0 .1rem;
+				line-height: .33rem;
+			}
+			.date{
+				float: left;
+				color: #515151;
+				font-size: .18rem;
+			}
+			.time{
+				float: right;
+				color: #c7c7c7;
+				font-size: .14rem;
+			}
+		}
+		.mark{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: .45rem;
+			color: $bgcolor;
+			background-color: $color;
+			.bottom-date{
+				position: absolute;
+				left: .2rem;
+				bottom: .1rem;
+				font-size: .18rem;
+			}
+			.bottom-time{
+				position: absolute;
+				right: .2rem;
+				bottom: .1rem;
+				font-size: .16rem;
+			}
+		}
+	}
+	footer{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		height: .85rem;
+		width: 100%;
+		min-width: 3.2rem;
+		.mask{
+			width: 100%;
+			height: 100%;
+			background-color: $bgcolor;
+			opacity: 0.2;
+		}
+		.btns{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.btn{
+			height: .4rem;
+			width: 50%;
+			margin: .25rem;
+			font-size: .18rem;
+			background-color: #d9534f;
+		    border: none;
+		    border-radius: 5px;
+		    a{
+				color: $color;
+				text-decoration: none;
+			}
+		}
+		.btn-warning{
+			background-color: #f0ad4e;
+		    border-color: #eea236;
+		}
+	}
+}
+
+/* 媒体查询实现自适应 */
+/*1280分辨率以上（大于1200px）*/
+
+@media screen and (min-width:1200px){
+	html{
+		font-size: 140px;
+	}
+	main .result-data{
+		text-align: center;
+	}
+}
+ 
+
+/*1100分辨率（大于960px，小于1199px）*/
+
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+    html{
+		font-size: 130px;
+	}
+	main .result-data{
+		font-size: .16rem;
+		text-align: center;
+	}
+}
+ 
+
+/*880分辨率（大于768px，小于959px）*/
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+     html{
+		font-size: 120px;
+	}
+	main .result-data{
+		font-size: .16rem;
+		text-align: center;
+	}
+}
+ 
+
+/*720分辨率（大于480px，小于767px）*/
+
+@media only screen and (min-width: 440px) and (max-width: 767px){
+     html{
+		font-size: 110px;
+	}
+	main .result-data{
+		font-size: .16rem;
+		text-align: center;
+	}
+}

@@ -1,0 +1,308 @@
+$bgcolor: #29bde0;
+$color: #fff;
+@mixin btn($width: 22px, $height: 20px, $dir: left, $top: 15px){
+	position: absolute;
+	#{$dir}: 10px;
+	top: $top;
+	width: $width;
+	height: $height;
+	background: url(../images/csssprite.png) no-repeat;
+	background-size: 250px 100px;
+}
+html{
+	font-size: 100px;
+	background-color: $bgcolor;
+	header{
+		position: fixed;
+		height: 45px;
+		width: 100%;
+		min-width: 320px;
+		line-height: 45px;
+		text-align: center;
+		color: $color;
+		background-color: $bgcolor;
+		overflow: hidden;
+		z-index: 999;
+		.vote{
+			height: 45px;
+			line-height: 45px;
+			margin: 0;
+			font-size: 18px;
+		}
+		.menu{
+			@include btn(22px, 20px, left);
+			background-position: -67px 0;
+			border: none;
+			outline: none;/*去除点击后的蓝色边框*/
+		}
+		.close{
+			@include btn(22px, 20px, right);
+			background-position: -35px 0;
+			border: none;
+			outline: none;/*去除点击后的蓝色边框*/
+			opacity: 1;
+		}
+	}
+	main{
+		padding-top: 45px;
+		padding-bottom: 120px;
+		background-color: $bgcolor;
+		.container-fluid{
+			padding: 0;
+			min-width: 3.2rem;
+			background-color: $bgcolor;
+			.tip{
+				position: relative;
+				overflow: hidden;
+				.music{
+				    @include btn(28px, 28px, right, 7px);
+				    background-position: -85px -42px;
+				    audio{
+						position: absolute;
+					    top: 0;
+					    left: -2px;
+					    display: inline-block;
+					    vertical-align: baseline;
+					    opacity: 0;
+					}
+				}
+				.text{
+					position: relative;
+					height: 42px;
+					line-height: 42px;
+					font-size: 16px;
+					text-indent: 2em;
+					color: #464646;
+					background-color: #b9e9f5;
+					i{
+					    position: absolute;
+					    bottom: -10px;
+					    left: 45px;
+					    border-top: 10px solid #b9e9f5;
+					    border-left: 5px solid transparent;
+					    border-right: 5px solid transparent;
+					}
+				}
+				.text2{
+					display: block;
+					height: 40px;
+					line-height: 40px;
+					text-indent: 3em;
+					color: $color;
+					font-size: 14px;
+					background-color: $bgcolor;
+				}
+			}
+			.role-list{
+				display: flex;
+				justify-content: space-around;
+				.role{
+					position: relative;
+					float: left;
+					width: .7rem;
+					height: .7rem;
+					margin: .18rem;
+					text-align: center;
+					border: 5px solid $color;
+					&:hover {
+						.opration{
+							display: block;
+						}
+					}
+					.role-name{
+						display: block;
+						height: .42rem;
+						font-size: .15rem;
+						line-height: .42rem;
+						background-color: #f5c97b;
+					}
+					.role-num{
+						display: block;
+						height: .28rem;
+						font-size: .13rem;
+						line-height: .28rem;
+						color: $color;
+						background-color: #83b09a;
+					}
+				}
+			}
+			.opration{
+			    position: relative;
+			    bottom: -16px;
+			    left: -5px;
+			    width: 116%;
+			    display: none; 
+			    ul{
+					padding: 0;
+					overflow: hidden;
+					li{
+						float: left;
+						width: 22%;
+						height: .15rem;
+						list-style: none;
+						background: url(../images/csssprite.png) no-repeat;
+						background-size: 2.5rem 1rem;
+						background-position: -.12rem -.4rem;
+						background-color: $color;
+						margin-right: 4%;
+						&:nth-child(2){
+							background-position: -.33rem -.42rem;
+						}
+						&:nth-child(3){
+							background-position: -.52rem -.42rem;
+						}
+						&:nth-child(4){
+							background-position: -.67rem -.40rem;
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	footer{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		height: 85px;
+		width: 100%;
+		min-width: 320px;
+		padding: .2rem;
+		box-sizing: border-box;
+		background-color: $bgcolor;
+		.voted{
+			width: 100%;
+			height: 45px;
+			color: $color;
+			font-size: 18px;
+			border: none;
+			background-color: #fbb435;
+			a{
+				color: $color;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+
+/* 媒体查询实现自适应 */
+/*1280分辨率以上（大于1200px）*/
+
+@media screen and (min-width:1200px){
+	html{
+		font-size: 350px;
+	}
+	header .vote, footer .voted {
+	    font-size: 26px;
+	}
+	html main{
+		padding-bottom: 170px;
+	}
+	main .tip .text {
+		font-size: 20px;
+	}
+	main .tip .text2 {
+		font-size: 18px;
+	}
+	.row .opration {
+    	width: 105%;
+    	bottom: -40px;
+	}
+	.row .role .role-name{
+		height: .44rem;
+		line-height: .44rem;
+	}
+	.row .role .role-num {
+		height: .26rem;
+		line-height: .26rem;
+	}
+}
+ 
+
+/*1100分辨率（大于960px，小于1199px）*/
+
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+	html{
+		font-size: 250px;
+	}
+	header .vote, footer .voted {
+	    font-size: 24px;
+	}
+	main .tip .text {
+		font-size: 19px;
+	}
+	main .tip .text2 {
+		font-size: 17px;
+	}
+	.row .opration {
+		width: 105%;
+    	bottom: -30px;
+	}
+	.row .role .role-name{
+		height: .44rem;
+		line-height: .44rem;
+	}
+	.row .role .role-num {
+		height: .26rem;
+		line-height: .26rem;
+	}
+}
+ 
+
+/*880分辨率（大于768px，小于959px）*/
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+	html{
+		font-size: 170px;
+	}
+	header .vote, footer .voted {
+	    font-size: 22px;
+	}
+	main .tip .text {
+		font-size: 18px;
+	}
+	main .tip .text2 {
+		font-size: 16px;
+	}
+	.row .opration {
+		width: 109%;
+    	bottom: -21px;
+	}
+	.row .role .role-name{
+		height: .44rem;
+		line-height: .44rem;
+	}
+	.row .role .role-num {
+		height: .26rem;
+		line-height: .26rem;
+	}
+}
+ 
+
+/*720分辨率（大于480px，小于767px）*/
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+   	html{
+		font-size: 140px;
+	}
+	header .vote, footer .voted {
+	    font-size: 20px;
+	}
+	main .tip .text {
+		font-size: 17px;
+	}
+	main .tip .text2 {
+		font-size: 15px;
+	}
+	.row .opration {
+		width: 110%;
+    	bottom: -20px;
+	}
+	.row .role .role-name{
+		height: .43rem;
+		line-height: .43rem;
+	}
+}
