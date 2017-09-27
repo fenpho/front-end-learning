@@ -1,0 +1,51 @@
+@import "breadcrumb";
+@import "job_info";
+.container-fluid {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+main{
+	background-color: #f1f1f1;
+	padding-bottom: 200px;
+	.breadcrumb{
+		border-bottom: 1px solid #d0d6d9;
+	}
+	.dir{
+		height: 60px;
+		margin-bottom: 40px;
+		line-height: 60px;
+		border-bottom: 1px solid #e3e3e3;
+		span{
+			margin-right: 20px;
+			font-size: 14px;
+			color: #999;
+		}
+		a{
+			margin-right: 35px;
+			font-size: 14px;
+			color: #333;
+			background-color: #f1f1f1;
+			border-radius: 0;
+			font-weight: normal;
+			border-radius: 2px;
+		    padding: 3px 5px;
+		    &.cur, &:hover{
+				font-size: 14px;
+				color: #fff;
+				background-color: #29b078;
+			}
+		}
+	}
+	.title{
+		margin: 0 10px 45px 10px;
+	    height: 40px;
+	    font-size: 16px;
+	    color: #333;
+	    font-weight: bold;
+	    border-bottom: 1px solid #d0d6d9;
+	}
+	.container-fluid>.row{
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,23 @@
+.breadcrumb {
+  overflow: hidden; }
+
+.breadcrumb li {
+  float: left;
+  height: 70px;
+  line-height: 70px; }
+
+.breadcrumb li a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+  line-height: 72px; }
+
+.breadcrumb .great {
+  font-size: 20px;
+  color: #333; }
+
+.breadcrumb .active {
+  font-size: 16px;
+  color: #29b078; }
+
+/*# sourceMappingURL=breadcrumb.css.map */

@@ -1,0 +1,187 @@
+.col-md-4 {
+  width: 33.33333%;
+  float: left;
+  padding: 0 25px;
+  box-sizing: border-box; }
+
+.job-detail {
+  position: relative;
+  padding: 0;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ddd; }
+
+.mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 50px 45px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  display: none;
+  border-radius: 5px;
+  box-sizing: border-box; }
+
+.job-detail.cur .mask, .job-detail:hover .mask {
+  display: block; }
+
+.mask-text {
+  font-size: 16px;
+  color: #fff; }
+
+.mask-text h4 {
+  height: 90px;
+  margin: 0;
+  line-height: 90px;
+  text-align: center; }
+
+.mask-text p {
+  margin: 0;
+  line-height: 25px;
+  text-indent: 2em; }
+
+.info {
+  margin: 0;
+  height: 180px;
+  padding-top: 20px; }
+
+.info .avatar {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 140px;
+  height: 140px;
+  background: url(../images/csssprite.png) no-repeat;
+  background-position: -637px 0px; }
+
+.info .intro {
+  position: relative;
+  padding-left: 165px;
+  padding-right: 10px; }
+
+.info .intro h4 {
+  height: 30px;
+  line-height: 35px;
+  font-size: 16px;
+  color: #333;
+  font-weight: bold; }
+
+.info .intro span {
+  line-height: 20px;
+  font-size: 14px;
+  color: #333; }
+
+.thead {
+  float: left;
+  margin-right: 10px;
+  font-size: 12px;
+  color: #999; }
+
+.enter {
+  margin: 0;
+  overflow: hidden; }
+
+.enter > div {
+  float: left;
+  width: 50%;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  height: 40px;
+  line-height: 40px;
+  box-sizing: border-box; }
+
+.enter > div:first-child {
+  border-left: none; }
+
+.enter > div:last-child {
+  border-left: none;
+  border-right: none; }
+
+.enter .star {
+  float: left;
+  width: 17px;
+  height: 17px;
+  margin: 11px 0 11px 5px;
+  background: url(../images/csssprite.png) no-repeat;
+  background-position: -193px 0px; }
+
+.grown {
+  margin: 0;
+  overflow: hidden; }
+
+.grown > div {
+  float: left;
+  width: 50%;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #333;
+  box-sizing: border-box; }
+
+.grown > div:first-child {
+  border-left: none;
+  border-top: none; }
+
+.grown > div:last-child {
+  border-left: none;
+  border-right: none;
+  border-top: none; }
+
+.spec {
+  color: #f01400; }
+
+.salary {
+  display: flex;
+  overflow: hidden; }
+
+.salary > div:first-child {
+  width: 105px; }
+
+.salary > div:last-child {
+  flex: 1; }
+
+.salary .thead {
+  width: 105px;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box; }
+
+.salary .row {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-left: -10px;
+  padding: 0 10px 0 25px;
+  font-size: 12px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  box-sizing: border-box; }
+
+.salary .row .time {
+  float: left; }
+
+.salary .row .value {
+  float: right; }
+
+.learner {
+  height: 40px;
+  padding-left: 10px;
+  line-height: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ddd; }
+
+.tip {
+  padding: 0 10px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #999; }
+
+/*# sourceMappingURL=job_info.css.map */

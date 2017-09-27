@@ -1,0 +1,88 @@
+.show{
+	width: 100%;
+	margin-top: 40px;
+	margin-left: 30px;
+	padding-bottom: 40px;
+	overflow: hidden;
+	position: relative;
+}
+.show .col-md-3{
+	width: 25%;
+    float: left;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-left: -15px;
+}
+.show h3{
+	height: 120px;
+	line-height: 120px;
+	color: #333;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+}
+.show .stwrap{
+	background-color: #fff;
+	border: 1px solid #e4e4e4;
+	box-shadow: 0 0 10px #e4e4e4;
+	border-radius: 5px;
+}
+.show .avatar{
+	position: relative;
+	width: 100%;
+	height: 70px;
+	padding-top: 138px;
+	font-size: 18px;
+	line-height: 72px;
+	text-align: center;
+	color: #333;
+}
+.show .info{
+	display: block;
+	font-size: 16px;
+	line-height: 26px;
+	color: #999;
+	padding: 0 30px 20px 30px;
+}
+.show .avatar i{
+	position: absolute;
+	left: 50%;
+	top: 15px;
+	width: 108px;
+	height: 108px;
+	margin-left: -54px;
+	background: url(../images/csssprite.png) no-repeat;
+	background-position: 0px -99px;
+}
+.show .student2 i{
+	background-position: -143px -99px;
+}
+.show .student3 i{
+	background-position: -286px -99px;
+}
+.show .student4 i{
+	background-position: -429px -99px;
+}
+.show .carousel-indicators{
+	position: absolute;
+	left: 50%;
+	margin-left: -62px;
+	bottom: 0;
+}
+.show .carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+.show .carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #29b078;
+}
