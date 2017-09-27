@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>修真院</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="hotline">客服热线：010-594-78634</div>
+        <div class="share">
+          <a href="#"><i class="share1"></i></a>
+          <a href="#"><i class="share2"></i></a>
+          <a href="#"><i class="share3"></i></a>
+        </div>
+        <div class="log">
+          <a href="#" class="login">登录</a>
+          <a href="#" class="reg">注册</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header" onclick="showOrHide()">
+        <button type="button" class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <a class="navbar-brand" href="#">技能树</a>
+      <a class="jnshu" href="#">IT修真院</a>
+  
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div  class="menu" id="menu">
+        <ul>
+          <li class="cur"><a href="https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task15/index.html">首页</a></li>
+          <li><a href="https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task15/job.html">职业</a></li>
+          <li><a href="https://fenpho.github.io/front-end-learning/jnshu/learnCSS/task15/recommend.html">推荐</a></li>
+          <li><a href="#">关于</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <!-- carousel start -->
+    <div class="carousel" id="carousel">
+      <div class="m_unit" id="m_unit">
+        <ul>
+          <li class="cur">
+            <a href="">
+              <img src="images/banner.png" alt="" />
+            </a>   
+            <div class="carousel-caption">
+              <p>作为你一个初级菜鸟，你是否想要了解</p>
+              <p><span>50万</span>年薪的程序员,都会哪些技能呢？</p>
+            </div>
+          </li>
+          <li>
+            <a href="">
+              <img src="images/banner.png" alt="" />
+            </a>
+
+            <div class="carousel-caption">
+              <p>作为你一个初级菜鸟，你是否想要了解</p>
+              <p><span>50万</span>年薪的程序员,都会哪些技能呢？</p>
+            </div>
+          </li>
+          <li>
+            <a href="">
+              <img src="images/banner.png" alt="" />
+            </a>
+            <div class="carousel-caption">
+              <p>作为你一个初级菜鸟，你是否想要了解</p>
+              <p><span>50万</span>年薪的程序员,都会哪些技能呢？</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="btns">
+        <span class="leftBtn" id="leftBtn"></span>
+        <span class="rightBtn" id="rightBtn"></span>
+      </div>
+      <div class="circles" id="circles">
+        <ol>
+          <li class="cur"></li>
+          <li></li>
+          <li></li>
+        </ol>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/animate-2.0.1.js"></script>
+    <script type="text/javascript">
+      //获取元素
+      var carousel = document.getElementById("carousel");
+      var m_unit = document.getElementById("m_unit");
+      var leftBtn = document.getElementById("leftBtn");
+      var rightBtn = document.getElementById("rightBtn");
+      var oul = m_unit.getElementsByTagName("ul")[0];
+      var lis = oul.getElementsByTagName("li");
+      var circles = document.getElementById("circles").getElementsByTagName("li");
+  
+      var idx = 0;
+      for(var i = 0; i<lis.length; i++){
+        lis[i].style.width = carousel.offsetWidth + 'px';
+        lis[i].style.height = carousel.offsetHeight + 'px';
+        lis[i].style.left = carousel.offsetWidth + 'px';
+      }
+      lis[0].style.left = 0 + 'px';
+      rightBtn.onclick = function(){
+        if(lis[idx].isanimated) return;
+        animate(lis[idx],{"left":-carousel.offsetWidth},600);
+        idx++;
+        if(idx > 2){
+          idx = 0;
+        }
+        lis[idx].style.left = carousel.offsetWidth + "px";
+        animate(lis[idx],{"left":0},600);
+        changeCircles();
+      }
+      leftBtn.onclick = function(){
+        if(lis[idx].isanimated) return;
+        animate(lis[idx],{"left":carousel.offsetWidth},600);
+        idx--;
+        if(idx < 0){
+          idx = 2;
+        }
+        lis[idx].style.left = -carousel.offsetWidth + "px";
+        animate(lis[idx],{"left":0},600);
+        changeCircles();
+      }
+      for (var i = 0; i < circles.length; i++) {
+        circles[i].index = i;
+        circles[i].onclick = function(){
+          if(this.index < idx){
+            if(lis[idx].isanimated) return;
+            animate(lis[idx],{"left":560},600);
+            idx = this.index;
+            lis[idx].style.left = "-560px";
+            animate(lis[idx],{"left":0},600);
+          }else if(this.index > idx){
+            if(lis[idx].isanimated) return;
+            animate(lis[idx],{"left":-560},600);
+            idx = this.index;
+            lis[idx].style.left = "560px";
+            animate(lis[idx],{"left":0},600);
+          }else{
+            ;
+          }
+          changeCircles();
+        }
+      };
+      //根据信号量设置小圆点
+      function changeCircles(){
+        //排他
+        for (var i = 0; i < circles.length; i++) {
+          circles[i].className = "";
+        }
+        circles[idx].className = "cur";
+      }
+    </script>
+    <!-- carousel end -->
+    <div class="container-fluid">
+      <div class="row feature">
+        <div class="col-md-3 efficiency">
+          <div class="pic"><i></i>高效</div>
+          <span class="text">将五到七年的成长时间，缩短到一年到三年。</span>
+        </div>
+        <div class="col-md-3 standard">
+          <div class="pic"><i></i>规范</div>
+          <span class="text">标准的实战教程，不会走弯路。</span>
+        </div>
+        <div class="col-md-3 connection">
+          <div class="pic"><i></i>人脉</div>
+          <span class="text">同班好友，同院学长，技术大师，入学就混入职脉圈，为以后铺平道路。</span>
+        </div>
+        <div class="col-md-3 data">
+          <div class="row">
+            <span class="num"><i></i>12400</span>
+            <span class="info">累计在线学习人数</span>
+          </div>          
+          <div class="row">
+            <span class="num"><i></i>12400</span>
+            <span class="info">学员已经找到满意工作</span>
+          </div>
+        </div>
+      </div>
+      <div class="row learn">
+        <h3>如何学习</h3>
+          <ul>
+            <li class="row col-sm-6 col-md-3">
+              <span class="order">1</span>
+              <span class="operation">匹配你现在的个人情况寻找适合自己的岗位</span>
+              <span class="next"></span>
+            </li>
+            <li class="row col-sm-6 col-md-3">
+              <span class="order">2</span>
+              <span class="operation">匹配你现在的个人情况寻找适合自己的岗位</span>
+              <span class="next"></span>
+            </li>
+            <li class="row col-sm-6 col-md-3">
+              <span class="order">3</span>
+              <span class="operation">匹配你现在的个人情况寻找适合自己的岗位</span>
+              <span class="next"></span>
+            </li>
+            <li class="row col-sm-6 col-md-3">
+              <span class="order">4</span>
+              <span class="operation">匹配你现在的个人情况寻找适合自己的岗位</span>
+              <span class="next"></span>
+            </li>
+            <li class="row col-sm-6 col-md-3">
+              <span class="order">5</span>
+              <span class="operation">匹配你现在的个人情况寻找适合自己的岗位</span>
+              <span class="next"></span>
+            </li>
+            <li class="row col-sm-6 col-md-3">
+              <span class="order">6</span>
+              <span class="operation">匹配你现在的个人情况寻找适合自己的岗位</span>
+              <span class="next"></span>
+            </li>
+            <li class="row col-sm-6 col-md-3">
+              <span class="order">7</span>
+              <span class="operation">匹配你现在的个人情况寻找适合自己的岗位</span>
+              <span class="next"></span>
+            </li>
+            <li class="row col-sm-6 col-md-3">
+              <span class="order">8</span>
+              <span class="operation">匹配你现在的个人情况寻找适合自己的岗位</span>
+            </li>
+          </ul>
+      </div>
+      <div class="row show">
+        <h3>优秀学员展示</h3>
+        <div class="col-md-3 student1">
+          <div class="stwrap">
+            <div class="avatar"><i></i>技术顾问：罗大佑</div>
+            <span class="info">百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</span>
+          </div>
+        </div>
+        <div class="col-md-3 student2">
+          <div class="stwrap">
+            <div class="avatar"><i></i>技术顾问：罗大佑</div>
+            <span class="info">百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</span>
+          </div>
+        </div>
+        <div class="col-md-3 student3">
+          <div class="stwrap">
+            <div class="avatar"><i></i>技术顾问：罗大佑</div>
+            <span class="info">百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</span>
+          </div>
+        </div>
+        <div class="col-md-3 student4">
+          <div class="stwrap">
+            <div class="avatar"><i></i>技术顾问：罗大佑</div>
+            <span class="info">百度技术总监：互联网基础服务领域，从事虚拟主机、云服务器、域名。曾任新网高级技术经理，负责技术研发、团队管理与建设。</span>
+          </div>
+        </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+      </div>
+      <div class="row cooperation">
+        <h3>战略合作企业</h3>
+        <div class="cowrap">
+          <div class="col-md-5ths">
+            <div class="ali"></div>
+          </div>
+          <div class="col-md-5ths">
+            <div class="king"></div>
+          </div>
+          <div class="col-md-5ths cur">
+            <div class="huan"></div>
+          </div>
+          <div class="col-md-5ths">
+            <div class="rong"></div>
+          </div>
+          <div class="col-md-5ths">
+            <div class="qiniu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="container-fluid link">
+      <div class="row">
+        <h3>友情链接</h3>
+        <div class="col-md-10ths">
+          <div class="row cur"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+        <div class="col-md-10ths">
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+          <div class="row"><i></i><a href="#">手机软件</a></div>
+        </div>
+      </div>
+  </div>
+  <footer>
+    <div class="container-fluid">
+       <div class="row">
+          <div class="col-md-4 us">
+            <div class="row change">技能树 — 改变你我</div>
+            <div class="row about"><ul>
+              <li><a href="#">关于我们</a></li>
+              <li><a href="#">联系我们</a></li>
+              <li><a href="#">合作企业</a></li>
+            </ul></div>
+          </div>
+          <div class="col-md-4 web">
+            <div class="row undersite">旗下网站</div>
+            <div class="row sitelist">
+              <ul>
+                <li class="cur"><a href="#">草船云孵化器</a></li>
+                <li><a href="#">最强IT特训营</a></li>
+                <br />
+                <li><a href="#">葡萄藤轻游戏</a></li>
+                <li><a href="#">桌游精灵</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 qrcode">
+            <div class="fllow">
+              <span>微信公众平台</span>
+              <i></i>
+            </div>
+          </div>
+       </div>
+    </div>
+    <div class="row copyright">Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP备13005880号</div>
+  </footer>
+
+  <script type="text/javascript">  
+      function showOrHide(){   
+          var obj_div = document.getElementById("menu");   
+          obj_div.style.display = (obj_div.style.display=='none')?'block':'none';   
+      }   
+  </script>  
+</body>
+</html>

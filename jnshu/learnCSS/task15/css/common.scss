@@ -1,0 +1,196 @@
+html, body {
+	font: 14px "Microsoft Yahei", sans-serif;
+}
+header {
+	height: 40px;
+	width: 100%;
+}
+header .container-fluid {
+	height: 40px;
+	line-height: 40px;
+}
+header .container-fluid .hotline {
+	float: left;
+	color: #29b078;
+}
+header .container-fluid .share {
+	float: right;
+	position: relative;
+}
+header .share i {
+	position: absolute;
+	right: 5px;
+	top: 8px;
+	width: 25px;
+	height: 25px;
+	background: url(../images/csssprite.png) no-repeat;
+	background-position: 0px 0px;
+}
+header .share i.share2{
+	right: 45px;
+	background-position: -51px 0px;
+} 
+header .share i.share3{
+	right: 85px;
+	background-position: -102px 0px;
+} 
+nav{
+	height: 99px;
+	width: 100%;
+	background-color: #29b078;
+}
+.navbar {
+	margin-bottom: 0;
+	background-color: #29b078;
+	border: none;
+}
+.navbar .container-fluid{
+	position: relative;
+}
+.navbar .navbar-brand{
+	position: absolute;
+    width: 108px;
+    height: 50px;
+    margin-top: 26px;
+    text-indent: -999em;
+    background: url(../images/csssprite.png) no-repeat;
+    background-position: -1045px -130px;
+}
+
+.navbar .menu{
+	position: absolute;
+	right: 0;
+}
+.navbar .menu li{
+	float: left;
+	width: 100px;
+	height: 100px;
+	line-height: 80px;
+	font-size: 16px;
+	text-align: center;
+	color: #fff;
+}
+.navbar .menu li a{
+	display: block;
+	height: 94px;
+	line-height: 100px;
+	text-decoration: none;
+	color: #fff;
+}
+.navbar .menu li:hover>a, .menu li.cur>a {
+    border-bottom: 4px solid #fff;
+    color: #fff;
+}
+
+.navbar .navbar-nav>li:hover>a, .navbar .navbar-nav>li.cur>a{
+	border-bottom: 4px solid #fff;
+	color: #fff;
+}
+.navbar .navbar-collapse{
+	margin-right: -46px;
+}
+
+footer{
+	height: 200px;
+	background-color: #26a26f;
+	border-top: 1px solid #32c086;
+}
+footer .row{
+	overflow: hidden;
+}
+footer .col-md-4{
+	width: 33.33333%;
+	float: left;
+}
+footer .us .change{
+	padding-left: 15px;
+	color: #fff;
+	font-size: 16px;
+	height: 80px;
+	line-height: 80px;
+}
+footer .us .about{
+	height: 80px;
+	line-height: 80px;
+}
+footer .us .about ul {
+	overflow: hidden;
+	margin-bottom: 0;
+	padding-left: 5px;
+}
+footer .us .about ul li{
+	float: left;
+	height: 70px;
+	line-height: 70px;
+	list-style: none;
+}
+footer .us .about ul li a{
+	color: #fff;
+	text-decoration: none;
+	padding: 0 10px;
+	border-right: 1px solid #fff;
+}
+footer .us .about ul li:last-child a{
+	border-right: none;
+}
+footer .web .undersite{
+    height: 65px;
+    line-height: 40px;
+    padding-top: 20px;
+    font-size: 16px;
+    color: #fff;
+}
+footer .web .sitelist ul{
+	overflow: hidden;
+	padding-left: 0;
+}
+footer .web .sitelist ul li{
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+}
+footer .web .sitelist ul li a{
+	display: inline-block;
+	height: 40px;
+	margin-right: 35px;
+	color: #fff;
+	text-decoration: none;
+}
+footer .web .sitelist ul li.cur a, footer .web .sitelist ul li:hover a{
+	border-bottom: 1px solid #fff;
+}
+footer .qrcode{
+	position: relative;
+	height: 170px;
+}
+footer .qrcode .fllow{
+	position: absolute;
+	top: 50%;
+	margin-top: -60px;
+	width: 120px;
+	height: 120px;
+	right: 20px;
+}
+footer .qrcode span{
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	color: #fff;
+}
+footer .qrcode i{
+	display: block;
+	width: 90px;
+	height: 90px;
+	background: url(../images/csssprite.png) no-repeat;
+	background-position: -1043px 0px;
+}
+footer .copyright{
+	height: 30px;
+    margin: 0;
+	line-height: 30px;
+	color: #fff;
+	font-size: 12px;
+	text-align: center;
+	border-top: 1px solid #32c086;
+}
