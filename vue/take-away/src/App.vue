@@ -31,7 +31,6 @@ export default {
       console.log(response);
       if (response.errno === ERR_OK) {
         this.seller = response.data;
-        console.log(this.seller);
       }
     });
   }
@@ -39,7 +38,7 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
-@import './common/stylus/mixin.styl';
+@import './common/stylus/mixin';
 
 #app {
   .tab {

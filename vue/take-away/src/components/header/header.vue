@@ -1,69 +1,74 @@
 <template>
- <div class="header">
-   <div class="content-wrapper">
-     <div class="avatar">
-       <img width="64" height="64" :src="seller.avatar" alt="头像">
-     </div>
-     <div class="content">
-       <div class="title">
-         <span class="brand"></span>
-         <span class="name">{{seller.name}}</span>
-       </div>
-       <div class="description">
-         {{seller.description}}/{{seller.deliveryTime}}分钟送达
-       </div>
-       <div class="support" v-if="seller.supports">
-         <span class="icon" :class="classMap[seller.supports[0].type]"></span>
-         <span class="text">{{seller.supports[0].description}}</span>
-       </div>
-     </div>
-     <div v-if="seller.supports" class="support-count" @click="showDetail">
-       <span class="count">{{seller.supports.length}}个</span>
-       <i class="icon-keyboard_arrow_right"></i>
-     </div>
-   </div>
-   <div class="bulletin-wrapper" @click="showDetail">
-     <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span><i class="icon-keyboard_arrow_right"></i>
-   </div>
-   <div class="background">
-     <img :src="seller.avatar" alt="背景" width="100%" height="100%">
-   </div>
-   <transition-group name="fade">
-     <div v-show="detailShow" class="detail" key="0">
-       <div class="detail-wrapper clearfix" key="1">
-         <div class="detail-main" key="2">
-           <h1 class="name">{{seller.name}}</h1>
-           <div class="star-wrapper" key="3">
-             <v-star :size="48" :score="seller.score"></v-star>
-           </div>
-           <div class="title-wrapper" key="4">
-             <v-title :title="'优惠信息'"></v-title>
-           </div>
-           <ul class="supports" v-if="seller.supports">
-             <li class="support-item" v-for="(item, index) in seller.supports" :key="index">
-               <span class="icon" :class="classMap[seller.supports[index].type]"></span>
-               <span class="text">{{seller.supports[index].description}}</span>
-             </li>
-           </ul>
-           <div class="title-wrapper" key="5">
-             <v-title :title="'商家公告'"></v-title>
-           </div>
-           <div class="bulletin" key="6">
-             <p class="content">{{seller.bulletin}}</p>
-           </div>
-         </div>
-       </div>
-       <div class="detail-close" @click="hideDetail" key="7">
-         <i class="icon-close"></i>
-       </div>
-     </div>
-   </transition-group>
- </div>
+  <div class="header">
+    <div class="content-wrapper">
+      <div class="avatar">
+        <img width="64" height="64" :src="seller.avatar" alt="头像">
+      </div>
+      <div class="content">
+        <div class="title">
+          <span class="brand"></span>
+          <span class="name">{{seller.name}}</span>
+        </div>
+        <div class="description">
+          {{seller.description}}/{{seller.deliveryTime}}分钟送达
+        </div>
+        <div class="support" v-if="seller.supports">
+          <div class="icon-wrapper">
+            <v-icon :className="classMap1[seller.supports[0].type]"></v-icon>
+          </div>
+          <span class="text">{{seller.supports[0].description}}</span>
+        </div>
+      </div>
+      <div v-if="seller.supports" class="support-count" @click="showDetail">
+        <span class="count">{{seller.supports.length}}个</span>
+        <i class="icon-keyboard_arrow_right"></i>
+      </div>
+    </div>
+    <div class="bulletin-wrapper" @click="showDetail">
+      <span class="bulletin-title"></span><span class="bulletin-text">{{seller.bulletin}}</span><i class="icon-keyboard_arrow_right"></i>
+    </div>
+    <div class="background">
+      <img :src="seller.avatar" alt="背景" width="100%" height="100%">
+    </div>
+    <transition-group name="fade">
+      <div v-show="detailShow" class="detail" key="0">
+        <div class="detail-wrapper clearfix" key="1">
+          <div class="detail-main" key="2">
+            <h1 class="name">{{seller.name}}</h1>
+            <div class="star-wrapper" key="3">
+              <v-star :size="48" :score="seller.score"></v-star>
+            </div>
+            <div class="title-wrapper" key="4">
+              <v-title :title="'优惠信息'"></v-title>
+            </div>
+            <ul class="supports" v-if="seller.supports">
+              <li class="support-item" v-for="(item, index) in seller.supports" :key="index">
+                <div class="icon-wrapper">
+                  <v-icon :className="classMap2[seller.supports[index].type]"></v-icon>
+                </div>
+                <span class="text">{{seller.supports[index].description}}</span>
+              </li>
+            </ul>
+            <div class="title-wrapper" key="5">
+              <v-title :title="'商家公告'"></v-title>
+            </div>
+            <div class="bulletin" key="6">
+              <p class="content">{{seller.bulletin}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="detail-close" @click="hideDetail" key="7">
+          <i class="icon-close"></i>
+        </div>
+      </div>
+    </transition-group>
+  </div>
 </template>
 
 <script type='text/ecmascript-6'>
 import star from '@/components/star/star';
 import title from '@/components/title/title';
+import icon from '@/components/icon/icon';
 
 export default {
   props: {
@@ -79,10 +84,12 @@ export default {
   },
   components: {
     'v-star': star,
-    'v-title': title
+    'v-title': title,
+    'v-icon': icon
   },
   created() {
-    this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
+    this.classMap1 = ['decrease1', 'discount1', 'special1', 'invoice1', 'guarantee1'];
+    this.classMap2 = ['decrease2', 'discount2', 'special2', 'invoice2', 'guarantee2'];
   },
   methods: {
     showDetail() {
@@ -150,34 +157,12 @@ export default {
       }
 
       .support {
-        .icon {
+        .icon-wrapper {
           display: inline-block;
           vertical-align: top;
           width: 12px;
           height: 12px;
           margin-right: 4px;
-          background-size: 12px 12px;
-          background-repeat: no-repeat;
-
-          &.decrease {
-            bg-image('decrease_1');
-          }
-
-          &.discount {
-            bg-image('discount_1');
-          }
-
-          &.guarantee {
-            bg-image('guarantee_1');
-          }
-
-          &.invoice {
-            bg-image('invoice_1');
-          }
-
-          &.special {
-            bg-image('special_1');
-          }
         }
 
         .text {
@@ -316,34 +301,12 @@ export default {
               margin-bottom: 0;
             }
 
-            .icon {
+            .icon-wrapper {
               display: inline-block;
               width: 16px;
               height: 16px;
               margin-right: 6px;
               vertical-align: top;
-              background-size: 16px 16px;
-              background-repeat: no-repeat;
-
-              &.decrease {
-                bg-image('decrease_2');
-              }
-
-              &.discount {
-                bg-image('discount_2');
-              }
-
-              &.guarantee {
-                bg-image('guarantee_2');
-              }
-
-              &.invoice {
-                bg-image('invoice_2');
-              }
-
-              &.special {
-                bg-image('special_2');
-              }
             }
 
             .text {
