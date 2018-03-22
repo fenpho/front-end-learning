@@ -14,7 +14,8 @@
     "compression-webpack-plugin": "^1.1.11",
     "vue": "^2.5.2",
     "vue-resource": "^1.5.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "better-scroll": "^0.1.7"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
