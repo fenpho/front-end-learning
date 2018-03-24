@@ -2,7 +2,7 @@
   <div class="goods">
     <div class="menu-wrapper" ref="menuWrapper">
       <ul>
-        <li class="menu-item" v-for="(item, index) in goods" :key="index">
+        <li class="menu-item" v-for="(item, index) in goods" :key="index" :class="{'current': currentIndex === index}" @click="selectMenu(index, $event)">
           <div class="text border-1px">
             <div class="icon-wrapper" v-show="item.type>0">
               <v-icon :className="classMap3[item.type]"></v-icon>
@@ -13,7 +13,7 @@
     </div>
     <div class="foods-wrapper" ref="foodsWrapper">
       <ul>
-        <li class="food-list" v-for="(item, index) in goods" :key="index">
+        <li class="food-list food-list-hook" v-for="(item, index) in goods" :key="index">
           <h1 class="title">{{item.name}}</h1>
           <ul>
             <li class="food-item border-1px" v-for="(food, index) in item.foods" :key="index">
@@ -35,11 +35,13 @@
         </li>
       </ul>
     </div>
+    <v-shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></v-shopcart>
   </div>
 </template>
 
 <script type='text/ecmascript-6'>
 import icon from '@/components/icon/icon';
+import shopcart from '@/components/shopcart/shopcart';
 import BScroll from 'better-scroll';
 const ERR_OK = 0;
 
@@ -51,11 +53,26 @@ export default {
   },
   data() {
     return {
-      goods: []
+      goods: [],
+      listHeight: [],
+      scrollY: 0
     };
   },
   components: {
-    'v-icon': icon
+    'v-icon': icon,
+    'v-shopcart': shopcart
+  },
+  computed: {
+    currentIndex() {
+      for (let i = 0; i < this.listHeight.length; i++) {
+        let height1 = this.listHeight[i];
+        let height2 = this.listHeight[i + 1];
+        if (!height2 || (this.scrollY >= height1 && this.scrollY < height2)) {
+          return i;
+        }
+      }
+      return 0;
+    }
   },
   created() {
     this.classMap3 = ['decrease3', 'discount3', 'special3', 'invoice3', 'guarantee3'];
@@ -66,15 +83,41 @@ export default {
         this.goods = response.data;
         this.$nextTick(() => {
           this._initScroll();
+          this._calculateHeight();
         });
       }
     });
   },
   methods: {
+    selectMenu(index, event) {
+      if (!event._constructed) {
+        return;
+      }
+      let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook');
+      let el = foodList[index];
+      this.foodsScroll.scrollToElement(el, 300);
+    },
     _initScroll() {
-      this.menuScroll = new BScroll(this.$refs.menuWrapper, {});
+      this.menuScroll = new BScroll(this.$refs.menuWrapper, {
+        click: true
+      });
 
-      this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {});
+      this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
+        probeType: 3
+      });
+      this.foodsScroll.on('scroll', pos => {
+        this.scrollY = Math.abs(Math.round(pos.y));
+      });
+    },
+    _calculateHeight() {
+      let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook');
+      let height = 0;
+      this.listHeight.push(height);
+      for (let i = 0; i < foodList.length; i++) {
+        let item = foodList[i];
+        height += item.clientHeight;
+        this.listHeight.push(height);
+      }
     }
   }
 };
@@ -102,6 +145,18 @@ export default {
       height: 54px;
       padding: 0 12px;
       line-height: 14px;
+
+      &.current {
+        position: relative;
+        z-index: 10;
+        margin-top: -1px;
+        background-color: #fff;
+
+        .text {
+          font-weight: 700;
+          border-none();
+        }
+      }
 
       .icon-wrapper {
         display: inline-block;

@@ -8,7 +8,7 @@
     </div>
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
-    <router-view></router-view>
+    <router-view :seller="seller"></router-view>
   </div>
 </template>
 
@@ -28,7 +28,6 @@ export default {
   created() {
     this.$http.get('/api/seller').then(response => {
       response = response.body;
-      console.log(response);
       if (response.errno === ERR_OK) {
         this.seller = response.data;
       }
