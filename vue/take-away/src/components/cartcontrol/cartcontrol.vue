@@ -24,7 +24,6 @@ export default {
   },
   components: {},
   created() {
-    console.log(this.food);
   },
   methods: {
     increaseCart(event) {
@@ -36,6 +35,7 @@ export default {
       } else {
         this.food.count++;
       }
+      this.$dispatch('cart.add', event.target);
     },
     decreaseCart(event) {
       if (!event._constructed) {
@@ -66,12 +66,22 @@ export default {
 
     &.move-enter-active, &.move-leave-active {
       transition: all 0.4s linear;
-      transform: rotate(180deg);
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+
+      .inner {
+        transition: all 0.4s linear;
+        transform: rotate(0);
+      }
     }
 
     &.move-enter, &.move-leave-to {
       opacity: 0;
       transform: translate3d(24px, 0, 0);
+
+      .inner {
+        transform: rotate(180deg);
+      }
     }
   }
 

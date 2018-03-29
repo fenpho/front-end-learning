@@ -38,7 +38,7 @@
         </li>
       </ul>
     </div>
-    <v-shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :selectFoods="selectFoods"></v-shopcart>
+    <v-shopcart ref="shopCart" :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :selectFoods="selectFoods"></v-shopcart>
   </div>
 </template>
 
@@ -135,6 +135,14 @@ export default {
         height += item.clientHeight;
         this.listHeight.push(height);
       }
+    },
+    _drop(target) {
+      this.$refs.shopCart.drop(target);
+    }
+  },
+  events: {
+    'cart.add'(target) {
+      this._drop(target);
     }
   }
 };

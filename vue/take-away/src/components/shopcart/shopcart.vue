@@ -17,6 +17,18 @@
         </div>
       </div>
     </div>
+    <div class="ball-container">
+      <transition-group
+        tag="div"
+        name="drop"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @after-enter="afterEnter">
+        <div class="ball" v-show="ball.show" v-for="(ball, index) in balls" :key="index">
+          <div class="inner"></div>
+        </div>
+      </transition-group>
+    </div>
   </div>
 </template>
 
@@ -39,7 +51,26 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      balls: [
+        {
+          show: false
+        },
+        {
+          show: false
+        },
+        {
+          show: false
+        },
+        {
+          show: false
+        },
+        {
+          show: false
+        }
+      ],
+      dropBalls: []
+    };
   },
   components: {},
   computed: {
@@ -74,7 +105,50 @@ export default {
         return 'enough';
       }
     }
+  },
+  methods: {
+    drop(el) {
+      for (let i = 0; i < this.balls.length; i++) {
+        let ball = this.balls[i];
+        if (!ball.show) {
+          ball.show = true;
+          ball.el = el;
+          this.dropBalls.push(ball);
+          return;
+        }
+      }
+    },
+
+    // --------
+    // 进入中
+    // --------
+    // beforeEnter: function(el) {
+    //   let count = this.balls.length;
+    //   while (count--) {
+    //     let ball = thiss.balls[count];
+    //     if (ball.show) {
+    //       let rect = ball.el.getBoundingClientRect();
+    //       let x = rect.left - 32;
+    //       let y = -(window.innerHeight - rect.top - 22);
+    //       el.style.display = '';
+    //       el.style.webkitTransform = `translate3d(0, ${y}px, 0)`
+    //     }
+    //   }
+    // },
+    // 此回调函数是可选项的设置
+    // 与 CSS 结合时使用
+    enter: function(el, done) {
+      // ...
+      done();
+    },
+    afterEnter: function(el) {
+      // ...
+    },
+    enterCancelled: function(el) {
+      // ...
+    }
   }
+  // transition
 };
 </script>
 
@@ -190,6 +264,27 @@ export default {
         &.enough {
           background: #00b43c;
           color: #fff;
+        }
+      }
+    }
+  }
+
+  .ball-container {
+    .ball {
+      position: fixed;
+      left: 32px;
+      bottom: 22px;
+      z-index: 200;
+
+      &.drop-enter-active, &.drop-leave-active {
+        transition: all 0.4s;
+
+        .inner {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background: rgb(0, 160, 220);
+          transition: all 0.4s;
         }
       }
     }
