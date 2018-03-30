@@ -25,7 +25,7 @@
         @enter="enter"
         @after-enter="afterEnter">
         <div class="ball" v-show="ball.show" v-for="(ball, index) in balls" :key="index">
-          <div class="inner"></div>
+          <div class="inner inner-hook"></div>
         </div>
       </transition-group>
     </div>
@@ -122,33 +122,45 @@ export default {
     // --------
     // 进入中
     // --------
-    // beforeEnter: function(el) {
-    //   let count = this.balls.length;
-    //   while (count--) {
-    //     let ball = thiss.balls[count];
-    //     if (ball.show) {
-    //       let rect = ball.el.getBoundingClientRect();
-    //       let x = rect.left - 32;
-    //       let y = -(window.innerHeight - rect.top - 22);
-    //       el.style.display = '';
-    //       el.style.webkitTransform = `translate3d(0, ${y}px, 0)`
-    //     }
-    //   }
-    // },
+    beforeEnter: function(el) {
+      let count = this.balls.length;
+      while (count--) {
+        let ball = this.balls[count];
+        if (ball.show) {
+          let rect = ball.el.getBoundingClientRect();
+          let x = rect.left - 32;
+          let y = -(window.innerHeight - rect.top - 22);
+          el.style.display = '';
+          el.style.webkitTransform = `translate3d(0, ${y}px, 0)`;
+          el.style.transform = `translate3d(0, ${y}px, 0)`;
+          let inner = el.getElementsByClassName('inner-hook')[0];
+          inner.style.webkitTransform = `translate3d(${x}px, 0, 0)`;
+          inner.style.transform = `translate3d(${x}px, 0, 0)`;
+        }
+      }
+    },
     // 此回调函数是可选项的设置
     // 与 CSS 结合时使用
-    enter: function(el, done) {
-      // ...
-      done();
+    enter: function(el) {
+      // 该条语句是为了触发重绘
+      /* eslint-disable no-unused-vars */
+      let rf = el.offsetHeight;
+      this.$nextTick(() => {
+        el.style.webkitTransform = 'translate3d(0, 0, 0)';
+        el.style.transform = 'translate3d(0, 0, 0)';
+        let inner = el.getElementsByClassName('inner-hook')[0];
+        inner.style.webkitTransform = 'translate3d(0, 0, 0)';
+        inner.style.transform = 'translate3d(0, 0, 0)';
+      });
     },
     afterEnter: function(el) {
-      // ...
-    },
-    enterCancelled: function(el) {
-      // ...
+      let ball = this.dropBalls.shift();
+      if (ball) {
+        ball.show = false;
+        el.style.display = 'none';
+      }
     }
   }
-  // transition
 };
 </script>
 
@@ -277,14 +289,14 @@ export default {
       z-index: 200;
 
       &.drop-enter-active, &.drop-leave-active {
-        transition: all 0.4s;
+        transition: all 0.4s cubic-bezier(0.49, -0.29, 0.75, 0.41);
 
         .inner {
           width: 16px;
           height: 16px;
           border-radius: 50%;
           background: rgb(0, 160, 220);
-          transition: all 0.4s;
+          transition: all 0.4s linear;
         }
       }
     }

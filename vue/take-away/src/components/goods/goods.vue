@@ -30,7 +30,7 @@
                   <span class="now">￥{{food.price}}</span><span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                 </div>
                 <div class="cartcontrol-wrapper">
-                  <v-cartcontrol :food="food"></v-cartcontrol>
+                  <v-cartcontrol :food="food" @cart-add="drop"></v-cartcontrol>
                 </div>
               </div>
             </li>
@@ -136,13 +136,11 @@ export default {
         this.listHeight.push(height);
       }
     },
-    _drop(target) {
-      this.$refs.shopCart.drop(target);
-    }
-  },
-  events: {
-    'cart.add'(target) {
-      this._drop(target);
+    drop(target) {
+      // 体验优化，异步执行动画
+      this.$nextTick(() => {
+        this.$refs.shopCart.drop(target);
+      });
     }
   }
 };
