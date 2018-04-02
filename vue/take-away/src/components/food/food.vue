@@ -18,13 +18,23 @@
             <div class="price" key="g">
               <span class="now">￥{{food.price}}</span><span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
             </div>
+            <div class="cartcontrol-wrapper" key="h">
+              <v-cartcontrol :food="food" @cart-add="drop"></v-cartcontrol>
+            </div>
+            <transition name="fade">
+              <div class="buy" v-show="!food.count" key="i" @click.stop.prevent="addFirst($event)">加入购物车</div>
+            </transition>
           </div>
-          <div class="cartcontrol-wrapper" key="h">
-            <v-cartcontrol :food="food" @cart-add="drop"></v-cartcontrol>
+          <v-split v-show="food.info"></v-split>
+          <div class="info" v-show="food.info" key="j">
+            <h3 class="title">商品信息</h3>
+            <p class="text">{{food.info}}</p>
           </div>
-          <transition name="fade">
-            <div class="buy" v-show="!food.count" key="i" @click.stop.prevent="addFirst($event)">加入购物车</div>
-          </transition>
+          <v-split></v-split>
+          <div class="rating" key="k">
+            <h3 class="title">商品评价</h3>
+            <v-ratingselect :select-type="selectType" :only-content="onlyContent" :desc="desc" :ratings="food.ratings"></v-ratingselect>
+          </div>
         </div>
       </div>
     </transition-group>
@@ -35,6 +45,12 @@
 import Vue from 'vue';
 import BScroll from 'better-scroll';
 import cartcontrol from '@/components/cartcontrol/cartcontrol';
+import split from '@/components/split/split';
+import ratingSelect from '@/components/ratingSelect/ratingSelect';
+
+// const POSITIVE = 0;
+// const NEGATIVE = 1;
+const ALL = 2;
 
 export default {
   props: {
@@ -44,15 +60,26 @@ export default {
   },
   data() {
     return {
-      showFlag: false
+      showFlag: false,
+      selectType: ALL,
+      onlyContent: true,
+      desc: {
+        all: '全部',
+        positive: '推荐',
+        negative: '吐槽'
+      }
     };
   },
   components: {
-    'v-cartcontrol': cartcontrol
+    'v-cartcontrol': cartcontrol,
+    'v-split': split,
+    'v-ratingselect': ratingSelect
   },
   methods: {
     show() {
       this.showFlag = true;
+      this.selectType = ALL;
+      this.onlyContent = true;
       this.$nextTick(() => {
         if (!this.scroll) {
           this.scroll = new BScroll(this.$refs.food, {
@@ -128,6 +155,7 @@ export default {
   }
 
   .content {
+    position: relative;
     padding: 18px;
 
     .title {
@@ -170,35 +198,65 @@ export default {
         color: rgb(147, 153, 159);
       }
     }
-  }
 
-  .cartcontrol-wrapper {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-  }
-
-  .buy {
-    position: absolute;
-    right: 18px;
-    bottom: 18px;
-    z-index: 10;
-    height: 24px;
-    line-height: 24px;
-    padding: 0 12px;
-    box-sizing: border-box;
-    border-radius: 12px;
-    font-size: 10px;
-    color: #fff;
-    background-color: rgb(0, 160, 220);
-    opacity: 1;
-
-    &.fade-enter-active, &.fade-leave-active {
-      transition: all 0.2s;
+    .cartcontrol-wrapper {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
     }
 
-    &.fade-enter, &.fade-leave-to {
-      opacity: 0;
+    .buy {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 10;
+      height: 24px;
+      line-height: 24px;
+      padding: 0 12px;
+      box-sizing: border-box;
+      border-radius: 12px;
+      font-size: 10px;
+      color: #fff;
+      background-color: rgb(0, 160, 220);
+      opacity: 1;
+
+      &.fade-enter-active, &.fade-leave-active {
+        transition: all 0.2s;
+      }
+
+      &.fade-enter, &.fade-leave-to {
+        opacity: 0;
+      }
+    }
+  }
+
+  .info {
+    padding: 18px;
+
+    .title {
+      line-height: 14px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: rgb(7, 17, 27);
+    }
+
+    .text {
+      line-height: 24px;
+      padding: 0 8px;
+      font-size: 12px;
+      color: rgb(77, 85, 93);
+    }
+  }
+
+  .rating {
+    padding-top: 18px;
+
+    .title {
+      margin-left: 18px;
+      line-height: 14px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: rgb(7, 17, 27);
     }
   }
 }
