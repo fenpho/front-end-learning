@@ -33,7 +33,13 @@
           <v-split></v-split>
           <div class="rating" key="k">
             <h3 class="title">商品评价</h3>
-            <v-ratingselect :select-type="selectType" :only-content="onlyContent" :desc="desc" :ratings="food.ratings"></v-ratingselect>
+            <v-ratingselect
+              :select-type="selectType"
+              :only-content="onlyContent"
+              :desc="desc"
+              :ratings="food.ratings"
+              @select-type="select"
+              @toggle-content="toggle"></v-ratingselect>
           </div>
         </div>
       </div>
@@ -79,7 +85,7 @@ export default {
     show() {
       this.showFlag = true;
       this.selectType = ALL;
-      this.onlyContent = true;
+      this.onlyContent = false;
       this.$nextTick(() => {
         if (!this.scroll) {
           this.scroll = new BScroll(this.$refs.food, {
@@ -102,6 +108,18 @@ export default {
     },
     drop(target) {
       this.$emit('cart-add', target);
+    },
+    select(type) {
+      this.selectType = type;
+      this.$nextTick(() => {
+        this.scroll.refresh();
+      });
+    },
+    toggle() {
+      this.onlyContent = !this.onlyContent;
+      this.$nextTick(() => {
+        this.scroll.refresh();
+      });
     }
   }
 };
