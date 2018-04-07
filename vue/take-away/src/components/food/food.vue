@@ -73,8 +73,6 @@ import cartcontrol from '@/components/cartcontrol/cartcontrol';
 import split from '@/components/split/split';
 import ratingSelect from '@/components/ratingSelect/ratingSelect';
 
-// const POSITIVE = 0;
-// const NEGATIVE = 1;
 const ALL = 2;
 
 export default {
