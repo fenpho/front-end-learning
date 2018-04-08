@@ -85,5 +85,24 @@ export default {
   &.special3 {
     bg-image('special_3');
   }
+  &.decrease4 {
+    bg-image('decrease_4');
+  }
+
+  &.discount4 {
+    bg-image('discount_4');
+  }
+
+  &.guarantee4 {
+    bg-image('guarantee_4');
+  }
+
+  &.invoice4 {
+    bg-image('invoice_4');
+  }
+
+  &.special4 {
+    bg-image('special_4');
+  }
 }
 </style>
