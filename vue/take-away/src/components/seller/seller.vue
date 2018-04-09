@@ -28,6 +28,10 @@
             </div>
           </li>
         </ul>
+        <div class="favorite" @click="toggleFavorite">
+          <span class="icon-favorite" :class="{'active': favorite}"></span>
+          <span class="text">{{favoriteText}}</span>
+        </div>
       </div>
       <v-split></v-split>
       <div class="bulletin">
@@ -44,6 +48,24 @@
           </li>
         </ul>
       </div>
+      <v-split></v-split>
+      <div class="pics">
+        <h3 class="title">商家实景</h3>
+        <div class="pic-wrapper" ref="picWrapper">
+          <ul class="pic-list" ref="picList">
+            <li class="pic-item" v-for="(pic, index) in seller.pics" :key="index">
+              <img :src="pic" alt="商家实景" width="120" height="90">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <v-split></v-split>
+      <div class="info">
+        <h3 class="title border-1px">商家信息</h3>
+        <ul>
+          <li class="info-item" v-for="(info, index) in seller.infos" :key="index">{{info}}</li>
+        </ul>
+      </div>
     </div>
  </div>
 </template>
@@ -53,6 +75,7 @@ import BScroll from 'better-scroll';
 import star from '@/components/star/star';
 import split from '@/components/split/split';
 import icon from '@/components/icon/icon';
+import { saveToLocal, loadFromLocal } from '@/common/js/store';
 
 export default {
   props: {
@@ -61,7 +84,11 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      favorite: (() => {
+        return loadFromLocal(this.seller.id, 'favorite', false);
+      })()
+    };
   },
   components: {
     'v-star': star,
@@ -75,15 +102,30 @@ export default {
     seller() {
       this.$nextTick(() => {
         this._initScroll();
+        this._initPics();
       });
     }
   },
   mounted() {
     this.$nextTick(() => {
       this._initScroll();
+      this._initPics();
     });
   },
+
+  computed: {
+    favoriteText() {
+      return this.favorite ? '已收藏' : '收藏';
+    }
+  },
   methods: {
+    toggleFavorite(event) {
+      if (!event._constructed) {
+        return;
+      }
+      this.favorite = !this.favorite;
+      saveToLocal(this.seller.id, 'favorite', this.favorite);
+    },
     _initScroll() {
       if (!this.scroll) {
         this.scroll = new BScroll(this.$refs.seller, {
@@ -91,6 +133,24 @@ export default {
         });
       } else {
         this.scroll.refresh();
+      }
+    },
+    _initPics() {
+      if (this.seller.pics) {
+        let picWidth = 120;
+        let margin = 6;
+        let width = (picWidth + margin) * this.seller.pics.length - margin;
+        this.$refs.picList.style.width = width + 'px';
+        this.$nextTick(() => {
+          if (!this.picScroll) {
+            this.picScroll = new BScroll(this.$refs.picWrapper, {
+              scrollX: true,
+              eventPassthrough: 'vertical'
+            });
+          } else {
+            this.picScroll.refresh();
+          }
+        });
       }
     }
   }
@@ -109,6 +169,7 @@ export default {
   overflow: hidden;
 
   .overview {
+    position: relative;
     padding: 18px;
 
     .title {
@@ -170,6 +231,31 @@ export default {
         }
       }
     }
+
+    .favorite {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 36px;
+      text-align: center;
+
+      .icon-favorite {
+        display: block;
+        color: #d4d6d9;
+        font-size: 24px;
+        line-height: 24px;
+
+        &.active {
+          color: rgb(240, 20, 20);
+        }
+      }
+
+      .text {
+        font-size: 10px;
+        line-height: 10px;
+        color: rgb(77, 85, 93);
+      }
+    }
   }
 
   .bulletin {
@@ -216,6 +302,61 @@ export default {
           font-size: 12px;
           color: rgb(7, 17, 27);
         }
+      }
+    }
+  }
+
+  .pics {
+    padding: 18px;
+
+    .title {
+      margin-bottom: 12px;
+      line-height: 14px;
+      color: rgb(7, 17, 27);
+      font-size: 14px;
+    }
+
+    .pic-wrapper {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+
+      .pic-list {
+        font-size: 0;
+
+        .pic-item {
+          display: inline-block;
+          margin-right: 6px;
+          width: 120px;
+          height: 90px;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    padding: 18px 18px 0 18px;
+    color: rgb(7, 17, 27);
+
+    .title {
+      padding-bottom: 12px;
+      line-height: 14px;
+      font-size: 14px;
+      border-1px(rgba(7, 17, 27, 0.1));
+    }
+
+    .info-item {
+      padding: 16px 12px;
+      line-height: 16px;
+      border-1px(rgba(7, 17, 27, 0.1));
+      font-size: 12px;
+
+      &:last-child {
+        border-none();
       }
     }
   }
