@@ -193,7 +193,7 @@ export default {
     },
     // 此回调函数是可选项的设置
     // 与 CSS 结合时使用
-    enter: function(el) {
+    enter: function(el, done) {
       // 该条语句是为了触发重绘
       /* eslint-disable no-unused-vars */
       let rf = el.offsetHeight;
@@ -203,6 +203,7 @@ export default {
         let inner = el.getElementsByClassName('inner-hook')[0];
         inner.style.webkitTransform = 'translate3d(0, 0, 0)';
         inner.style.transform = 'translate3d(0, 0, 0)';
+        el.addEventListener('transitionend', done);
       });
     },
     afterEnter: function(el) {
