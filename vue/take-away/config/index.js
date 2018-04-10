@@ -45,6 +45,8 @@ module.exports = {
   },
 
   build: {
+    port: 9000, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 

@@ -17,7 +17,9 @@
 <script>
 import header from '@/components/header/header';
 import { urlParse } from '@/common/js/util';
-const ERR_OK = 0;
+import appData from '../data.json';
+
+// const ERR_OK = 0;
 export default {
   name: 'App',
   components: {
@@ -34,12 +36,13 @@ export default {
     };
   },
   created() {
-    this.$http.get('/api/seller?id=' + this.seller.id).then(response => {
-      response = response.body;
-      if (response.errno === ERR_OK) {
-        this.seller = Object.assign({}, this.seller, response.data);
-      }
-    });
+    // this.$http.get('/api/seller?id=' + this.seller.id).then(response => {
+    //   response = response.body;
+    //   if (response.errno === ERR_OK) {
+    //     this.seller = Object.assign({}, this.seller, response.data);
+    //   }
+    // });
+    this.seller = appData.seller;
   }
 };
 </script>

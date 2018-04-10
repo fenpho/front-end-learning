@@ -51,7 +51,9 @@ import icon from '@/components/icon/icon';
 import shopcart from '@/components/shopcart/shopcart';
 import cartcontrol from '@/components/cartcontrol/cartcontrol';
 import food from '@/components/food/food';
-const ERR_OK = 0;
+import appData from '../../../data.json';
+
+// const ERR_OK = 0;
 
 export default {
   props: {
@@ -99,15 +101,20 @@ export default {
   created() {
     this.classMap3 = ['decrease3', 'discount3', 'special3', 'invoice3', 'guarantee3'];
 
-    this.$http.get('/api/goods').then(response => {
-      response = response.body;
-      if (response.errno === ERR_OK) {
-        this.goods = response.data;
-        this.$nextTick(() => {
-          this._initScroll();
-          this._calculateHeight();
-        });
-      }
+    // this.$http.get('/api/goods').then(response => {
+    //   response = response.body;
+    //   if (response.errno === ERR_OK) {
+    //     this.goods = response.data;
+    //     this.$nextTick(() => {
+    //       this._initScroll();
+    //       this._calculateHeight();
+    //     });
+    //   }
+    // });
+    this.goods = appData.goods;
+    this.$nextTick(() => {
+      this._initScroll();
+      this._calculateHeight();
     });
   },
   methods: {

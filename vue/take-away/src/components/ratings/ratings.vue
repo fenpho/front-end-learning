@@ -65,9 +65,10 @@ import star from '@/components/star/star';
 import split from '@/components/split/split';
 import ratingSelect from '@/components/ratingSelect/ratingSelect';
 import { formatDate } from '../../common/js/date';
+import appData from '../../../data.json';
 
 const ALL = 2;
-const ERR_OK = 0;
+// const ERR_OK = 0;
 
 export default {
   props: {
@@ -93,19 +94,29 @@ export default {
     'v-ratingselect': ratingSelect
   },
   created() {
-    this.$http.get('/api/ratings').then(response => {
-      response = response.body;
-      if (response.errno === ERR_OK) {
-        this.ratings = response.data;
-        this.$nextTick(() => {
-          if (!this.scroll) {
-            this.scroll = new BScroll(this.$refs.ratings, {
-              click: true
-            });
-          } else {
-            this.scroll.refresh();
-          }
+    // this.$http.get('/api/ratings').then(response => {
+    //   response = response.body;
+    //   if (response.errno === ERR_OK) {
+    //     this.ratings = response.data;
+    //     this.$nextTick(() => {
+    //       if (!this.scroll) {
+    //         this.scroll = new BScroll(this.$refs.ratings, {
+    //           click: true
+    //         });
+    //       } else {
+    //         this.scroll.refresh();
+    //       }
+    //     });
+    //   }
+    // });
+    this.ratings = appData.ratings;
+    this.$nextTick(() => {
+      if (!this.scroll) {
+        this.scroll = new BScroll(this.$refs.ratings, {
+          click: true
         });
+      } else {
+        this.scroll.refresh();
       }
     });
   },
