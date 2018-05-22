@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Button} from 'antd-mobile';
-import 'antd-mobile/dist/antd-mobile.css'
+import { Button, List } from 'antd-mobile';
 
 class App extends Component {
   render() {
@@ -46,11 +45,13 @@ class 一营 extends Component {
       <div>
         <h2>一营营长，{this.props.老大}</h2>
         <Button type='primary' onClick={this.addSolder}>新兵入伍</Button>
-        <ul>
+        <List renderHeader={() => '士兵列表'}>
           {this.state.solders.map(v => {
-            return <li key={v}>{v}</li>
+            return (
+              <List.Item key={v}>{v}</List.Item>
+            )
           })}
-        </ul>
+        </List>
       </div>
     )
   }
