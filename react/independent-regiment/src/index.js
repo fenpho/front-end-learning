@@ -13,6 +13,7 @@ import {
 import Auth from './Auth';
 import Dashboard from './Dashboard';
 import reducer from './reducer'
+import './config';
 
 const store = createStore(reducer, compose(
     applyMiddleware(thunk),
