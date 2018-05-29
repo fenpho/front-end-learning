@@ -18,14 +18,6 @@ const store = createStore(reducer, compose(
     window.devToolsExtension ? window.devToolsExtension() : () => { }
 ));
 
-// 登录
-// 没有登录信息，统一跳转到login
-// 页面 导航+显示+注销
-// 一营
-// 二营
-// 骑兵连
-// router+redux
-
 ReactDOM.render(
     (<Provider store={store}>
         <BrowserRouter>
