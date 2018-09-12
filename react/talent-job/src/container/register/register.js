@@ -9,6 +9,7 @@ import {
   Button
 } from 'antd-mobile';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import { register } from '../../redux/user.redux';
 
@@ -29,7 +30,6 @@ class Register extends React.Component {
   }
 
   handleChange(key, val) {
-    console.log(1)
     this.setState({
       [key]: val
     });
@@ -44,13 +44,13 @@ class Register extends React.Component {
 
     return (
       <div>
+        {this.props.redirectPath ? (
+          <Redirect to={this.props.redirectPath} />
+        ) : null}
         <Logo />
-        <h2>注册页</h2>
+        {this.props.msg ? <p className="error-msg">{this.props.msg}</p> : null}
         <WingBlank>
           <List>
-            {this.props.msg ? (
-              <p className="error-msg">{this.props.msg}</p>
-            ) : null}
             <InputItem onChange={v => this.handleChange('user', v)}>
               用户名
             </InputItem>
