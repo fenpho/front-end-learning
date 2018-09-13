@@ -67,6 +67,7 @@ Router.post('/update', function(req, res) {
   // 用户有没有cookie
   const { userid } = req.cookies;
   if (!userid) {
+    // json.dumps
     return res.json({ code: 1, msg: '您尚未登录' });
   }
   const body = req.body;

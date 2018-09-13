@@ -35,7 +35,9 @@ export function errorMsg(msg) {
   return { msg, type: ERROR_MSG };
 }
 
-export function authSuccess(data) {
+export function authSuccess(obj) {
+  // 过滤属性
+  const { pwd, _id, ...data } = obj;
   return { type: AUTH_SUCCESS, payload: data };
 }
 
