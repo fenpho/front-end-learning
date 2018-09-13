@@ -10,12 +10,10 @@ import './config';
 import Login from './container/login/login';
 import Register from './container/register/register';
 import AuthRoute from './component/authroute/authroute';
+import BossInfo from './container/bossinfo/bossinfo';
 
 import './index.css';
 
-function Boss() {
-  return <h2>boss page</h2>;
-}
 const store = createStore(
   reducer,
   compose(
@@ -29,9 +27,9 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <AuthRoute />
-        <Route path="/boss" component={Boss} />
-        <Route path="/login" component={Login} />
         <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+        <Route path="/bossinfo" component={BossInfo} />
       </div>
     </BrowserRouter>
   </Provider>,

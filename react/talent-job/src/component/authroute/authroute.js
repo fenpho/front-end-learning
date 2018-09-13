@@ -1,8 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { userData } from '../../redux/user.redux';
 
 @withRouter
+@connect(
+  null,
+  { userData }
+)
 class AuthRoute extends React.Component {
   componentDidMount() {
     const publicList = ['/login', '/register'];
@@ -15,10 +22,10 @@ class AuthRoute extends React.Component {
       if (res.status === 200) {
         if (res.data.code === 0) {
           // 有登陆信息
+          this.props.userData(res.data.data);
         } else {
           this.props.history.push('/login');
         }
-        console.log(res.data);
       }
     });
     // 是否登录
@@ -28,7 +35,7 @@ class AuthRoute extends React.Component {
   }
 
   render() {
-    return <p>判断跳转的地方</p>;
+    return null;
   }
 }
 
