@@ -6,6 +6,7 @@ redux 数据管理
 react-redux 数据管理扩展
 antd-mobile 移动端UI
 transform-decorators-legacy  装饰器
+prop-types 接口值定义
 
 
 后台
