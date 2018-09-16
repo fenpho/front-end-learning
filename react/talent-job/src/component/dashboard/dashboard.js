@@ -5,15 +5,11 @@ import { Switch, Route } from 'react-router-dom';
 
 import NavLink from '../navlink/navlink';
 import Boss from '../../container/boss/boss';
+import Genius from '../../container/genius/genius';
+import User from '../../container/user/user';
 
-function Genius() {
-  return <h2>Genius</h2>;
-}
 function Msg() {
   return <h2>msg</h2>;
-}
-function User() {
-  return <h2>User</h2>;
 }
 
 @connect(state => state)
