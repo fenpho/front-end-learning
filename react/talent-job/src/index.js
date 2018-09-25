@@ -13,6 +13,7 @@ import AuthRoute from './component/authroute/authroute';
 import BossInfo from './container/bossinfo/bossinfo';
 import GeniusInfo from './container/geniusinfo/geniusinfo';
 import DashBoard from './component/dashboard/dashboard';
+import Chat from './component/chat/chat';
 
 import './index.css';
 
@@ -36,6 +37,7 @@ ReactDOM.render(
           <Route path="/login" component={Login} />
           <Route path="/bossinfo" component={BossInfo} />
           <Route path="/geniusinfo" component={GeniusInfo} />
+          <Route path="/chat/:user" component={Chat} />
           <Route component={DashBoard} />
         </Switch>
       </div>

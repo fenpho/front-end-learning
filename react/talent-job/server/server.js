@@ -6,11 +6,20 @@ const userRouter = require('./user');
 
 // 新建app
 const app = express();
+
+// work with express
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
+
+io.on('connection', function(socket) {
+  console.log('user login');
+});
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 
 app.use('/user', userRouter);
 
-app.listen(8888, function() {
+server.listen(8888, function() {
   console.log('Node app is start at port 8888');
 });

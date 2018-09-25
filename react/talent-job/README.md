@@ -7,6 +7,7 @@ react-redux 数据管理扩展
 antd-mobile 移动端UI
 transform-decorators-legacy  装饰器
 prop-types 接口值定义
+socket.io-client 基于websocket的双向通信的库
 
 
 后台
@@ -16,6 +17,10 @@ nodemon 自动重启node服务
 body-parser 接受post参数
 cookie-parser 处理cookie
 utility md5加密用于存储密码
+socket.io 基于websocket的双向通信的库
+
+
+
 
 Windows下启动mongo
 
