@@ -1,6 +1,6 @@
 import React from 'react';
 import io from 'socket.io-client';
-import { List, InputItem, NavBar, Icon } from 'antd-mobile';
+import { List, InputItem, NavBar, Icon, Grid } from 'antd-mobile';
 import { connect } from 'react-redux';
 
 import { getMsgList, sendMsg, recvMsg } from '../../redux/chat.redux';
@@ -17,7 +17,8 @@ class Chat extends React.Component {
     super(props);
     this.state = {
       text: '',
-      msg: []
+      msg: [],
+      showEmoji: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -33,16 +34,18 @@ class Chat extends React.Component {
     this.setState({ text: '' });
   }
 
+  fixCarousel() {
+    // 用来修复antd grid组件高度bug
+    setTimeout(function() {
+      window.dispatchEvent(new Event('resize'));
+    }, 0);
+  }
+
   componentDidMount() {
     if (!this.props.chat.chatmsg.length) {
       this.props.getMsgList();
       this.props.recvMsg();
     }
-    // socket.on('recvmsg', data => {
-    //   this.setState({
-    //     msg: [...this.state.msg, data.text]
-    //   });
-    // });
   }
 
   render() {
@@ -88,9 +91,37 @@ class Chat extends React.Component {
               placeholder="请输入"
               value={this.state.text}
               onChange={v => this.setState({ text: v })}
-              extra={<span onClick={this.handleSubmit}>发送</span>}
+              extra={
+                <div>
+                  <span
+                    onClick={() => {
+                      this.setState({
+                        showEmoji: !this.state.showEmoji
+                      });
+                      this.fixCarousel();
+                    }}
+                    style={{ marginRight: '15px' }}
+                  >
+                    👻
+                  </span>
+                  <span onClick={this.handleSubmit}>发送</span>
+                </div>
+              }
             />
           </List>
+          {this.state.showEmoji ? (
+            <Grid
+              data={emoji}
+              columnNum={9}
+              isCarousel={true}
+              carouselMaxRow={4}
+              onClick={el => {
+                this.setState({
+                  text: this.state.text + el.text
+                });
+              }}
+            />
+          ) : null}
         </div>
       </div>
     );
