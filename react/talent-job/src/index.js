@@ -21,7 +21,7 @@ const store = createStore(
   reducer,
   compose(
     applyMiddleware(thunk),
-    window.devToolsExtension ? window.devToolsExtension() : () => {}
+    window.devToolsExtension ? window.devToolsExtension() : () => {} // firefox 不识别
   )
 );
 

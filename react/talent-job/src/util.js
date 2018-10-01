@@ -9,3 +9,7 @@ export function getRedirectPath({ type, avatar }) {
 
   return url;
 }
+
+export function getChatId(userId, targerId) {
+  return [userId, targerId].sort().join('_');
+}
