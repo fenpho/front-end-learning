@@ -6,7 +6,7 @@ const userRouter = require('./user');
 const model = require('./model');
 const Chat = model.getModel('chat');
 
-// Chat.remove({}, function(e, d){});
+// Chat.remove({chatid:'5b9a5987ec008f0ed81f44af_'}, function(e, d){});
 
 // 新建app
 const app = express();

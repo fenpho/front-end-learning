@@ -101,6 +101,23 @@ Router.get('/getmsglist', function(req, res) {
   });
 });
 
+Router.post('/readmsg', function(req, res) {
+  const userid = req.cookies.userid;
+  const { from } = req.body;
+  Chat.update(
+    { from, to: userid },
+    { $set: { read: true } },
+    { multi: true },
+    function(err, doc) {
+      if (!err) {
+        console.log(doc);
+        return res.json({ code: 0, num: doc.nModified });
+      }
+      return res.json({ code: 1, msg: '修改失败' });
+    }
+  );
+});
+
 // 防止彩虹表破解密码，加盐，二次打包
 function md5Pwd(pwd) {
   const salt = 'greatest_web_app_343589075789%*$#@!)(~~';
