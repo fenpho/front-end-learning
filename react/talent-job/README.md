@@ -8,6 +8,7 @@ antd-mobile 移动端UI
 transform-decorators-legacy  装饰器
 prop-types 接口值定义
 socket.io-client 基于websocket的双向通信的库
+immutable
 
 
 后台

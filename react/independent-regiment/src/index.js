@@ -3,22 +3,21 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { 
-    BrowserRouter, 
-    Route, 
-    Switch, 
-    Redirect 
-} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Auth from './Auth';
 import Dashboard from './Dashboard';
-import reducer from './reducer'
+import reducer from './reducer';
 import './config';
+import App from './App';
 
-const store = createStore(reducer, compose(
+const store = createStore(
+  reducer,
+  compose(
     applyMiddleware(thunk),
-    window.devToolsExtension ? window.devToolsExtension() : () => { }
-));
+    window.devToolsExtension ? window.devToolsExtension() : () => {}
+  )
+);
 
 // 登录
 // 没有登录信息，统一跳转到login
@@ -29,14 +28,15 @@ const store = createStore(reducer, compose(
 // router+redux
 
 ReactDOM.render(
-    (<Provider store={store}>
-        <BrowserRouter>
+  <Provider store={store}>
+    <App />
+    {/* <BrowserRouter>
             <Switch>
                 <Route path='/login' exact component={Auth}></Route>
                 <Route path='/dashboard' component={Dashboard}></Route>
                 <Redirect to='/dashboard'></Redirect>
             </Switch>
-        </BrowserRouter>
-    </Provider>),
-    document.getElementById('root')
+        </BrowserRouter> */}
+  </Provider>,
+  document.getElementById('root')
 );
