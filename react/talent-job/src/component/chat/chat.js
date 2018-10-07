@@ -1,12 +1,10 @@
 import React from 'react';
-import io from 'socket.io-client';
 import { List, InputItem, NavBar, Icon, Grid } from 'antd-mobile';
 import { connect } from 'react-redux';
+import QueueAnim from 'rc-queue-anim';
 
 import { getMsgList, sendMsg, recvMsg, readMsg } from '../../redux/chat.redux';
 import { getChatId } from '../../util';
-
-const socket = io('ws://localhost:8888');
 
 @connect(
   state => state,
@@ -72,24 +70,32 @@ class Chat extends React.Component {
           mode="dark"
           icon={<Icon type="left" />}
           onLeftClick={() => this.props.history.goBack()}
+          className="fixed-header"
         >
           {users[userid].name}
         </NavBar>
-        {chatmsgs.map(v => {
-          const avatar = require(`../img/${users[v.from].avatar}.png`);
+        <QueueAnim
+          style={{
+            marginBottom: this.state.showEmoji ? 230 : 50,
+            marginTop: '44px'
+          }}
+        >
+          {chatmsgs.map(v => {
+            const avatar = require(`../img/${users[v.from].avatar}.png`);
 
-          return v.from === userid ? (
-            <List key={v._id}>
-              <Item thumb={avatar}>{v.content}</Item>
-            </List>
-          ) : (
-            <List key={v._id}>
-              <Item className="chat-me" extra={<img src={avatar} alt="" />}>
-                {v.content}
-              </Item>
-            </List>
-          );
-        })}
+            return v.from === userid ? (
+              <List key={v._id}>
+                <Item thumb={avatar}>{v.content}</Item>
+              </List>
+            ) : (
+              <List key={v._id}>
+                <Item className="chat-me" extra={<img src={avatar} alt="" />}>
+                  {v.content}
+                </Item>
+              </List>
+            );
+          })}
+        </QueueAnim>
         <div className="stick-footer">
           <List>
             <InputItem
@@ -106,6 +112,8 @@ class Chat extends React.Component {
                       this.fixCarousel();
                     }}
                     style={{ marginRight: '15px' }}
+                    role="img"
+                    aria-label="emojis"
                   >
                     👻
                   </span>
